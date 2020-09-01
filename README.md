@@ -1,5 +1,5 @@
-# WebD-workshop
-###Setup Steps: ###
-1.git clone
-2.pip install django
-3.python manage.py runserver
+# WebD-workshop 
+**Setup Steps: - ** 
+* git clone
+* pip install django
+* python manage.py runserver
