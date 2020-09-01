@@ -10,14 +10,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-from .models import *
-from .forms import  CreateUserForm
-
+# from .models import *
+from .forms import CreateUserForm
 
 
 def registerPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('users:home')
     else:
         form = CreateUserForm()
         if request.method == 'POST':
@@ -26,7 +25,7 @@ def registerPage(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
-                return redirect('login')
+                return redirect('users:login')
 
         context = {'form': form}
         return render(request, 'basic_app/registration.html', context)
@@ -34,7 +33,7 @@ def registerPage(request):
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('users:home')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -44,7 +43,7 @@ def loginPage(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('users:home')
             else:
                 messages.info(request, 'Username OR password is incorrect')
 
@@ -54,17 +53,10 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('users:login')
 
 
-@login_required(login_url='login')
+@login_required(login_url='users:login')
 def home(request):
-    context = {  'Students': students,
-
-               }
-    return render(request, 'basic_app/dashboard.html', context)
-
-
-
-
-
+    # context = {'Students': students, }
+    return render(request, 'basic_app/dashboard.html', {})
