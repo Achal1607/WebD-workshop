@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,PasswordChangeForm
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
+from django.contrib.auth.models import User
 
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
-# from .models import *
-from .forms import CreateUserForm
+from .forms import CreateUserForm, UserInfoForm
+from .models import UserInfo
 
 
 def registerPage(request):
@@ -46,17 +46,42 @@ def loginPage(request):
                 return redirect('users:home')
             else:
                 messages.info(request, 'Username OR password is incorrect')
+        return render(request, 'basic_app/login.html')
 
-        context = {}
-        return render(request, 'basic_app/login.html', context)
 
+def updatePage(request):
+    if not request.user.is_authenticated:
+        return redirect('users:login')
+    else:
+        user_info = request.user
+        form = UserInfoForm()
+        u=''
+        if UserInfo.objects.filter(user=User.objects.get(username=user_info.username)).first():
+            u=UserInfo.objects.get(user=User.objects.get(username=user_info.username))
+        
+        if request.method == 'POST':  
+            form = UserInfoForm(data=request.POST)
+            if form.is_valid():
+                if UserInfo.objects.filter(user=User.objects.get(username=user_info.username)).first():
+                    u=UserInfo.objects.get(user=User.objects.get(username=user_info.username))
+                    u.delete()
+                userdetail=form.save(commit=False)
+                userdetail.user=User.objects.get(username=user_info.username)
+                userdetail.save()
+                return redirect('users:home')
+            else:
+                messages.info(request, "Error Updating Your Information...")
+                return redirect('users:home')
+        else:
+            context={'form':form}
+            if u:
+                context['u']=u
+            return render(request, 'basic_app/update.html', context)
 
 def logoutUser(request):
     logout(request)
     return redirect('users:login')
 
 
-@login_required(login_url='users:login')
 def home(request):
-    # context = {'Students': students, }
     return render(request, 'basic_app/dashboard.html', {})
