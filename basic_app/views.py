@@ -84,4 +84,4 @@ def logoutUser(request):
 
 
 def home(request):
-    return render(request, 'basic_app/dashboard.html', {})
+    return render(request, 'basic_app/intial.html', {})
