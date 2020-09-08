@@ -1,23 +1,25 @@
 {% load static %}
-<div class="container" style="margin-top: 100px;">
-	<div class="buttons offset-3" id='events'>
-		<h2 style="text-align:center;font-weight: bold;color: white;">Lectures</h2>
+<div class="container" style="margin-top: 170px;">
+	<div class="buttons offset-1" id='events'>
+		<center> <font color="black" size="40px"><strong>Lecture Track</strong> </font></center>
+		<div class="col-11 mx-auto mt-5">
 		<span class="prev">
-			<button id='previous' class="fill" style="width: 50px;" onclick="prev()"> <i class="fa fa-chevron-left"
+			<button id='previous' class="fill" style="width: 50px;border: none;" onclick="prev()"> <i class="fa fa-chevron-left"
 					aria-hidden="true"></i></button>
 		</span>
-		<button id="1" class="fill active" onclick="toggleVisibility('Oct19');">October 19</button>
-		<button id="2" class="fill" onclick="toggleVisibility('Oct20');">October 20</button>
-		<button id="3" class="fill" onclick="toggleVisibility('Oct21');">October 21</button>
-		<button id="4" class="fill" style="display: none;" onclick="toggleVisibility('Oct22');">October 22</button>
-		<button id="5" class="fill" style="display: none;" onclick="toggleVisibility('Oct23');">October 23</button>
-		<button id="6" class="fill" style="display: none;" onclick="toggleVisibility('Oct24');">October 24</button>
-		<button id="7" class="fill" style="display: none;" onclick="toggleVisibility('Oct25');">October 25</button>
+		<button id="1" class="fill active customize ml-1" onclick="toggleVisibility('Oct19');" >October 19</button>
+		<button id="2" class="fill customize ml-1" onclick="toggleVisibility('Oct20');">October 20</button>
+		<button id="3" class="fill customize ml-1" onclick="toggleVisibility('Oct21');">October 21</button>
+		<button id="4" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct22');">October 22</button>
+		<button id="5" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct23');">October 23</button>
+		<button id="6" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct24');">October 24</button>
+		<button id="7" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct25');">October 25</button>
 
-		<span class="next">
-			<button id='nxt' class="fill" style="width: 50px;" onclick="next()"> <i class="fa fa-chevron-right"
+		<span class="next ml-1">
+			<button id='nxt' class="fill" style="width: 50px;border: none;" onclick="next()"> <i class="fa fa-chevron-right"
 					aria-hidden="true"></i></button>
 		</span>
+	</div>
 	</div>
 
 	<div id="Oct19">
@@ -26,36 +28,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4"	>
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bolder;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -65,36 +73,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -104,36 +118,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -143,36 +163,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -182,36 +208,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -221,36 +253,42 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
@@ -260,53 +298,89 @@
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 1</span>
 				<br>
-				<span style="font-size: 1.5em;">10:00 AM-11:30 AM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 2</span>
 				<br>
-				<span style="font-size: 1.5em;">3:00 PM-4:00 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
 			</div>
 		</div>
 		<div class="d-flex container mt-5 col-6">
 			<div>
 				<img src="{% static 'images/user_2.png' %}" alt="Speaker Picture" style="height: 200px;width: 200px;">
 			</div>
-			<div>
+			<div class="ml-4">
 				<span style="font-size: 2.5em;">Talk Title</span>
 				<br>
 				<span style="font-size: 1.5em;">Session 3</span>
 				<br>
-				<span style="font-size: 1.5em;">7:00 PM-8:30 PM</span>
+				<span style="font-size: 50px;color:#0078e1;">&#10230;</span>
+				<br>
+				<span style="font-size: 1.5em;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
 			</div>
 		</div>
 	</div>
-	<h2 class="mt-4" style="text-align:center;font-weight: bold;color:white">Notable Speakers</h3>
-		<div id="notable" class="d-flex col-10 text-center">
-			<div class="speaker ml-5 p-2">
+</div>
+
+<div id= 'DivNotable' class="p-4 mt-5">
+	<center> <font color="white" size="40px"><strong>Notable Speakers</strong> </font></center>
+	<div id="notable" class="d-flex col-12 text-center">
+			<span class="prev">
+				<button id='previous1' class="fill" style="width: 50px;border: none;" onclick="prev1()"> <i class="fa fa-chevron-left"
+						aria-hidden="true"></i></button>
+			</span>
+			<div id="spk1" class="speaker p-2 mx-auto">
 				<img src="{% static 'images/user_2.png' %}" alt="user" width="170px" height="170px"
 					style="border-radius:50%;margin:40px 140px 50px 140px;">
 				<h1>Adrian Benjan</h1>
 				<h3>Department Of Mechanical Engineering,Duke University</h3>
 			</div>
-			<div class="speaker ml-5 p-2">
+			<div id="spk2" class="speaker p-2 mx-auto">
 				<img src="{% static 'images/user_2.png' %}" alt="user" width="170px" height="170px"
 					style="border-radius:50%;margin:40px 140px 50px 140px;">
 				<h1>Suman Chakraborty</h1>
-				<h3>Department Of Mechanical Engineering,IIT Kharagpur</h3>
+				<h3>Department Of Mechanical Engineering,IIT Roorkee</h3>
 			</div>
+			<div id="spk3" class="speaker p-2 mx-auto" style="display: none;">
+				<img src="{% static 'images/user_2.png' %}" alt="user" width="170px" height="170px"
+					style="border-radius:50%;margin:40px 140px 50px 140px;">
+				<h1>Detlef Lohse</h1>
+				<h3>Department of Physics of Fluids, University of Twente</h3>
+			</div>
+			<div id="spk4" class="speaker p-2 mx-auto" style="display: none;">
+				<img src="{% static 'images/user_2.png' %}" alt="user" width="170px" height="170px"
+					style="border-radius:50%;margin:40px 140px 50px 140px;">
+				<h1>S. Sundar</h1>
+				<h3>Department of Mathematics, IIT Madras</h3>
+			</div>
+			<span class="next">
+				<button id='nxt1' class="fill" style="width: 50px;border: none;" onclick="next1()"> <i class="fa fa-chevron-right"
+					aria-hidden="true"></i></button>
+			</span>
 		</div>
-</div>
+	</div>
+<script>
+	let n=document.getElementById('DivNotable').style
+	n.backgroundImage="url({% static 'images/bg.jpg' %})";
+	n.backgroundRepeat="no-repeat";
+	n.backgroundSize="cover";
+	n.backgroundPosition="center";
+</script>
 <script src="{% static 'master.js' %}"></script>
