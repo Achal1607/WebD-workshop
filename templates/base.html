@@ -1,5 +1,6 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 
 <head>
@@ -18,10 +19,10 @@
     <link rel="stylesheet" href="{% static 'master.css' %}">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'users:home' %}">
-            <img src="{% static 'images/logo.png' %}" alt="Logo">
+<body  >
+    <nav class="navbar navbar-expand-lg navbar-light navbar-default">
+        <a class="navbar-brand back" href="{% url 'users:home' %}">
+            <img class="circular--square "src="{% static 'images/iitricon.jpg' %}" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,30 +30,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav navbar-right">
-                <a class="nav-item nav-link links" href="/#aboutus">About Us</a>
-                <a class="nav-item nav-link links" href="/#events">Lectures</a>
+                <a class="nav-item nav-link links" href="/#aboutus"><font color="#ffffff" size="6px"><em>Indian Institute Of Technology Roorkee</em></font></a>
+
             </div>
             <div class="navbar-nav navbar-right ml-auto">
+                      <a class="nav-item nav-link links" href="/#aboutus"><font color="#ffffff">About Us</font></a>
+                <a class="nav-item nav-link links" href="/#events"><font color="#ffffff">Lectures</font></a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link links" href="{% url 'users:update' %}">{{user.username}}</a>
-                <a class="nav-item nav-link links" href="{% url 'users:logout' %}">Logout</a>
+                <a class="nav-item nav-link links" href="{% url 'users:logout' %}"><font color="#ffffff">Logout</font></a>
                 {% else %}
-                <a class="nav-item nav-link links" href="{% url 'users:login' %}">Login</a>
-                <a class="nav-item nav-link links" href="{% url 'users:register' %}">Registration</a>
+                <a class="nav-item nav-link links" href="{% url 'users:login' %}"><font color="#ffffff">Login</font></a>
+                <a class="nav-item nav-link links" href="{% url 'users:register' %}"><font color="#ffffff">Registration</font></a>
                 {% endif %}
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="bg">
+
         {% block body_block %}
 
         {% endblock %}
     </div>
-    <footer id="footer" class="py-4 bg-light text-black-50 mt-5" style="width:100%">
-        <div class="text-center">
-            <small>Copyright &copy; IIT Roorkee </small>
-        </div>
-    </footer>
+<!--    <footer id="footer" class="py-4 bg-light text-black-50 mt-5" style="width:100%">-->
+<!--        <div class="text-center">-->
+<!--            <small>Copyright &copy; IIT Roorkee </small>-->
+<!--        </div>-->
+<!--    </footer>-->
 </body>
 
 </html>

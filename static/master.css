@@ -2,11 +2,47 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background:#0080ff !important;
+    background:#0078E1 !important;
     scroll-behavior: smooth;
+width:100%;
+ height: 100%;
+
 }
 
-.user_card {
+
+.hfivee{
+padding:20px;}
+
+.aboutus{
+ width:100%;
+ height:140%;
+
+  background-color:#ffffff;
+}
+#aboutid{
+ text-transform: uppercase;
+}
+ .aims{
+  margin-top:20%;
+  width:100%;
+ height: 45%;
+background-color:#ffffff;
+  }
+  .dive4{
+  color:#000000;
+
+
+  }
+  .price{
+   margin-top:40px;
+
+  }
+.details{
+   margin-left:100px;
+
+  }
+
+  .user_card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
@@ -41,12 +77,23 @@ html {
 }
 .dive1{
 
-background-color:#0080ff;
+background-color:#0078E1;
 
 }
-.dive2{
 
- margin-top:30px;
+.bg {
+  /* The image used */
+  background-image: url("images/backimage.jpg");
+  height: 100%;
+width:100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}.dive2{
+  height: 100%;
+width:100%;
+
 
 }
 .hthree{
@@ -80,15 +127,15 @@ background-color:#0080ff;
 }
 .p1{
   float:right;
-  width: auto;
- margin-left:20px;
+  width:1000px;
 
- margin-top: 40px;
+padding:40px;
+
 }
 .p2{
   float:left;
   width: auto;
-
+padding:40px;
 
  margin-top: 70px;
 }
@@ -113,23 +160,18 @@ background-color:#0080ff;
     padding: 0 2rem;
 }
 .iit {
-  border-top-left-radius: 50% 50%;
-  border-top-right-radius: 50% 50%;
-  border-bottom-right-radius: 50% 50%;
-  border-bottom-left-radius: 50% 50%;
 
-     margin-right: 50px;
+     padding: 30px;
      float:left;
+ margin-left:50px;
+     margin-right:50px;
 }
 
 .maths{
-  border-top-left-radius: 50% 50%;
-  border-top-right-radius: 50% 50%;
-  border-bottom-right-radius: 50% 50%;
-  border-bottom-left-radius: 50% 50%;
-
-
+padding: 30px;
      float:right;
+     margin-left:50px;
+     margin-right:50px;
 }
 
 .circular--square {
@@ -137,27 +179,70 @@ background-color:#0080ff;
   border-top-right-radius: 50% 50%;
   border-bottom-right-radius: 50% 50%;
   border-bottom-left-radius: 50% 50%;
-    margin-top: 40px;
-     margin-right: 50px;
+
+     height:60px;
+     width:60px;
 }
 
 .hee1{
- margin-top: 10px;
- margin-left: 10px;
+
+ margin-left: 50px;
  color:white;
 }
 .hee2{
  margin-top: 10px;
- margin-left: 10px;
- color:black;
+ margin-left: 50px;
+ color:#0078E1;
 }
 
+.divhome{
+  height: 100%;
+width:100%;
+margin-top: 180px;
+
+}
+.divanchor{
+  height:30%;
+width:30%;
+margin-top:37px;
+margin-left:50px;
+}
+
+.navbar-default{
+
+top: 0;
+left: 0;
+width: 100%;
+padding: 0;
+z-index: 10000;
+color:#ffffff;
+-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+height: auto;
+background-color:transparent;
+padding: 20px 30px;
+-webkit-transition: all ease-out .5s;
+-moz-transition: all ease-out .5s;
+-o-transition: all ease-out .5s;
+transition: all ease-out .5s;
+background-color: rgba(0, 0, 0, 0.4);
+}
+  #registerbtn{
+  border-radius: 2em;
+      background-color:#0078E1;
+      color:#FFFFFF;
+      text-decoration:none;
+      box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 3rem;
+  text-transform: uppercase;}
 .input-group-text {
     background: #f7ba5b !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
 }
+
 
 .input_user,
 .input_pass:focus {

@@ -1,123 +1,130 @@
  {% extends 'base.html' %}
  {% load static %}
 
- {% block body_block %}
-
- <div class=" dive1 container mt-5">
+{% block body_block %}
+<div class="d-flex justify-content-center">
    <div class="dive2">
+       <div  class="divhome">
      <h4 class="hee1">International e-colloquium on</h4>
      <h1 class="hee1">RECENT ADVANCEMENTS IN</h1>
      <h1 class="hee1">FLUID FLOW AND HEAT TRANSFER</h1>
-     <h3 class="hee2">19 Oct 2020 - 25 Oct 2020</h3>
+     <h4 class="hee2">19 Oct 2020 - 25 Oct 2020</h4>
     {% if not user.is_authenticated %}
-    <a href="/register" class="other fill" role="button" width="100px" height="100px">Register Now</a>
-    <a href="/login" class="other fill" role="button" width="100px" height="100px">Login</a>
-    {% endif %}   
+           <div  class="divanchor"> <a href="/register" id="registerbtn" role="button" ><b>Register Now</b></a>
+         </div>
+    {% endif %}
+       </div>
    </div>
- </div>
+</div>
 
- <div class="dive4 mt-0">
-   <h3 class="hthree">Aim and Objectives:</h3>
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="aims">
+ <div class="dive4">
+   <center> <font color="black" size="40px"><strong>Aim and Objectives:</strong> </font></center>
 
    <h5 class="hee2">
-     <font color="white">
-       <p>The aim of this e-colloquium to bring all the renowned scientists and academicians in the field of fluid
+     <font color="black">
+       <p><em>The aim of this e-colloquium to bring all the renowned scientists and academicians in the field of fluid
          dynamics and heat transfer together on a platform so that young researcher from various science and engineering
          streams can take the benefit and get awareness about the recent advancements in the fields.
-       </p>
+       </em>  </p>
      </font>
    </h5>
  </div>
- <div class="dive5">
-   <h3 class="hforee"> Registration Details:</h3>
-   <h5 class="hfive"> Registration is going on upto 10 oct 2020</h5>
-   <h5 class="hfive">Registration Fee/-</h5>
+ <div class="price">
+     <center><font color="black" size="40px"><strong>Registration Details: </strong> </font> </center>
+     <div class="details"><font color=#0078E1><strong><em>Registration is going on upto 10 oct 2020 </em> </strong> </font></center>
+
    <ul>
+       <font color="black"><strong><em> Registration Fee/- </em> </strong> </font></center>
      <li>
-       <font color="white"> Indian Researcher / Academician / Student - Rs. 1,000/-</font>
+         <font color="black" ><em> Indian Researcher / Academician / Student - Rs. 1,000/-</em></font>
      </li>
      <li>
-       <font color="white">Overseas Researcher / Academician / Student - US $ 50</font>
+         <font color="black"  ><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
      </li>
-   </ul>
+   </ul></div>
  </div>
- <div class="dive5" id="aboutus">
-   <center>
-     <h1 class="hforee">About Us</h1>
-   </center>
+    </div>
+    <div class="aboutus" id="aboutus">
+
+         <center id="aboutid"><font color="black" size="40px"><strong>  About Us </strong> </font> </center>
+
      <div class="diviit">
-       <img src="{% static 'images/iitrimage1.jpg' %}" class="iit" width="350px" height="350px" />
+ <img src="{% static 'images/iitrimage1.jpg' %}" class="iit" width="350px" height="350px" />
 
        <p class="p1">
-         <h3 class="hfore">IIT Roorkee:</h3>
-         <font color="white">Institute of Technology Roorkee is among the foremost of institutes of national importance
+           <font color="black" size="5px"><strong> IIT Roorkee: </strong></font>
+         <font color="black">Institute of Technology Roorkee is among the foremost of institutes of national importance
            in higher technological education and in engineering, basic and applied research. Since its establishment,
            the Institute has played a vital role in providing the technical manpower and know-how to the country and in
            pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
            contributed to all sectors of technological development.It has also been considered a trend-setter in the
            area of education and research in the field of science, technology, and engineering. The Institute had
-           celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence.<span
-             id="dots">...</span><span id="more"> The Institute offers Bachelor's Degree courses in 10 disciplines of
+           celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence....
+            </font>
+       </p>
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"style="margin-left:110px;">Read more</button>
+<div class="w3-container">
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+       <p class="p1">
+
+         <font color="black"><h3>IIT Roorkee:</h3> Institute of Technology Roorkee is among the foremost of institutes of national importance
+           in higher technological education and in engineering, basic and applied research. Since its establishment,
+           the Institute has played a vital role in providing the technical manpower and know-how to the country and in
+           pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
+           contributed to all sectors of technological development.It has also been considered a trend-setter in the
+           area of education and research in the field of science, technology, and engineering. The Institute had
+           celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence.
+            The Institute offers Bachelor's Degree courses in 10 disciplines of
              Engineering and Architecture and Postgraduate's Degree in 55 disciplines of Engineering, Applied Science,
              Architecture and planning. The Institute has facility for doctoral work in all Departments and Research
-             Centers.</span></font>
+             Centers.  </font>
        </p>
-       <button onclick="myFunction()" class="other fill" id="myBtn">Read more</button>
+      </div>
+    </div>
+  </div>
+</div>
+
      </div>
        <div class="diviit">
          <img src="{% static 'images/maths.jpg' %}" class="maths" width="350px" height="350px" />
 
-         <p class="p2">
-           <h3 class="hforee">Department of Mathematics:</h3>
-           <font color="white"> The Department of Mathematics attained its present status of an independent department
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <p class="p1">
+           <font color="black">  <h3>Department of Mathematics:</h3>The Department of Mathematics attained its present status of an independent department
              in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
              Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
-             students of different Engineering and Science Departments. <span id="dots2">...</span><span id="more2"> The
-               Department also offers facilities for research work leading to Ph.D. degree in different branches of Pure
+             students of different Engineering and Science Departments.The Department also offers facilities for research work leading to Ph.D. degree in different branches of Pure
                and Applied Mathematics. Department had collaborated with different National and International
                organizations and has expertise in various diversified fields of Mathematics. Our Department also offers
-               consultancies in Mathematical modeling and solution of various industrial and real-life problems.</span>
+               consultancies in Mathematical modeling and solution of various industrial and real-life problems.
+           </font>
+       </p>
+      </div>
+    </div>
+  </div>
+</div>
+        <p class="p2">
+            <font color="black">    <h3 class="hforee"><strong>Department of Mathematics:</strong></h3></font>
+           <font color="black"> The Department of Mathematics attained its present status of an independent department
+             in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
+             Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
+             students of different Engineering and Science Departments...
            </font>
          </p>
-         <button onclick="myFunction2()" class="other fill" id="myBtn2">Read more</button>
+         <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black" style="margin-left:80px;">Read more</button>
        </div>
-       <script>
-        function myFunction() {
-          var dots = document.getElementById("dots");
-          var moreText = document.getElementById("more");
-          var btnText = document.getElementById("myBtn");
- 
-          if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "Read more";
-            moreText.style.display = "none";
-            btnText.classList.remove("active")
-          } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Read less";
-            moreText.style.display = "inline";
-            btnText.classList.add("active")
-          }
-        }
- 
-        function myFunction2() {
-          var dots = document.getElementById("dots2");
-          var moreText = document.getElementById("more2");
-          var btnText = document.getElementById("myBtn2");
- 
-          if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "Read more";
-            moreText.style.display = "none";
-            btnText.classList.remove("active")
-          } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Read less";
-            moreText.style.display = "inline";
-            btnText.classList.add("active")
-          }
-        }
-      </script> 
+
      </div>
-     {% include 'basic_app/dashboard.html' %}
+
           {% endblock %}
