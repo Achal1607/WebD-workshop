@@ -73,7 +73,7 @@ function prev() {
     Ids = ['5', '6', '7']
   }
   const found=m.find(e=>e.buId===Ids[0])
-    toggleVisibility(found.div)
+  toggleVisibility(found.div)
   hideNonVisibleButtons()
 }
 
@@ -86,5 +86,42 @@ function hideNonVisibleButtons() {
     } else {
       button.style.display = "none";
     }
+  }
+}
+
+divSpeaker=["spk1","spk2","spk3","spk4"]
+activeSpk=["spk1","spk2"]
+
+function next1(){
+  if (activeSpk[1]!==divSpeaker[divSpeaker.length-1]) {
+    activeSpk.push(divSpeaker[divSpeaker.indexOf(activeSpk[1])+1])
+    activeSpk.shift()
+  } else {
+    activeSpk.splice(0, activeSpk.length)
+    activeSpk=["spk4","spk1"]
+  }
+  console.log(activeSpk)
+  SpeakerShow()
+}
+
+function prev1(){
+if (activeSpk[0]!==divSpeaker[0]) {
+    activeSpk.unshift(divSpeaker[divSpeaker.indexOf(activeSpk[0])-1])
+    activeSpk.pop()
+  } else {
+    activeSpk.splice(0, activeSpk.length)
+    activeSpk=["spk4","spk1"]
+  }
+  console.log(activeSpk)
+  SpeakerShow()
+}
+
+function SpeakerShow(){
+  for(let i=0;i<divSpeaker.length;i++){
+    let d=document.getElementById(divSpeaker[i])
+    if(activeSpk.includes(divSpeaker[i]))
+      d.style.display="inline"
+    else
+      d.style.display="none"
   }
 }
