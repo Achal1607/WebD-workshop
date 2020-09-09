@@ -2,67 +2,94 @@
  {% load static %}
 
 {% block body_block %}
-<div class="d-flex justify-content-center">
-   <div class="dive2">
-       <div  class="divhome">
+
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64 " id="about">
+
+
+    <div class="w3-row w3-padding-64">
+
           <h4 class="hee1">International e-colloquium on</h4>
           <h1 class="hee1">RECENT ADVANCEMENTS IN</h1>
           <h1 class="hee1">FLUID FLOW AND HEAT TRANSFER</h1>
-          <h4 class="hee2">19 Oct 2020 - 25 Oct 2020</h4>
+          <h3 class="hee2">19 Oct 2020 - 25 Oct 2020</h3>
           {% if not user.is_authenticated %}
-                <div  class="divanchor"> <a href="/register" id="registerbtn" role="button" ><b>Register Now</b></a></div>
+       <a href="/register" class="w3-button" id="registerbtn"style="margin-left:55px;margin-top:20px;"><b>Register Now</b></a>
+
           {% endif %}
-       </div>
+
     </div>
-</div>
+       <div class="w3-row w3-padding-64 bg" style="margin-top:20%">
+        <div class="row ">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="container" style="max-width:25rem; ">
+ <div class="card"  >
 
-<div class="aims">
- <div class="dive4">
-   <center> <font color="black" size="40px"><strong>Aim and Objectives:</strong> </font></center>
-
-   <h5 class="hee2">
-     <font color="black">
-       <p><em>The aim of this e-colloquium to bring all the renowned scientists and academicians in the field of fluid
+  <div class="card-body">
+    <h1 class="card-title">Aim and Objectives:</h1>
+    <p class="card-text"> <em>The aim of this e-colloquium to bring all the renowned scientists and academicians in the field of fluid
          dynamics and heat transfer together on a platform so that young researcher from various science and engineering
          streams can take the benefit and get awareness about the recent advancements in the fields.
-       </em>  </p>
-     </font>
-   </h5>
- </div>
-  <div class="price">
-      <center><font color="black" size="40px"><strong>Registration Details: </strong> </font> </center>
-        <div class="details"><font color=#0078E1><strong><em>Registration is going on upto 10 oct 2020 </em> </strong> </font></center>
+       </em> </p>
+   </div>
+</div>
+
+
+</div>
+        </br>
+<div class="container" style="max-width:25rem; ">
+    <div class="card" >
+
+  <div class="card-body">
+    <h1 class="card-title">Registration Details: </h1> <br>
+    <p class="card-text">  <font color=#0078E1><strong><em>Registration is going on upto 10 oct 2020 </em> </strong> </font></center>
 
       <ul>
           <font color="black"><strong><em> Registration Fee/- </em> </strong> </font></center>
         <li>
             <font color="black" ><em> Indian Researcher / Academician / Student - Rs. 1,000/-</em></font>
         </li>
+
         <li>
             <font color="black"  ><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
         </li>
       </ul>
-      </div>
-  </div>
+       </p>
+     </div>
 </div>
-<div class="aboutus" id="aboutus">
-         <center id="aboutid"><font color="black" size="40px"><strong>  About Us </strong> </font> </center>
-  <div class="diviit">
-      <img src="{% static 'images/iitrimage1.jpg' %}" class="iit" width="350px" height="350px" />
-       <p class="p1">
+</div>
+    </div>
+       </div>
+  </div>
+
+<!-- End page content -->
+</div>
+
+
+<div class="container">
+        <center id="aboutid"><font color="black" size="10rem"><strong>  About Us </strong> </font> </center>
+    <hr>
+<div  class="row">
+
+
+      <img src="{% static 'images/iitrimage1.jpg' %}" style="margin-left:50px;"  width="300px" height="300px" />
+   <div  class="column">    <p class="p1">
            <font color="black" size="5px"><strong> IIT Roorkee: </strong></font>
          <font color="black">Institute of Technology Roorkee is among the foremost of institutes of national importance
            in higher technological education and in engineering, basic and applied research. Since its establishment,
            the Institute has played a vital role in providing the technical manpower and know-how to the country and in
            pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
-           contributed to all sectors of technological development.It has also been considered a trend-setter in the
-           area of education and research in the field of science, technology, and engineering. The Institute had
-           celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence....
+           contributed to all sectors of technological development....
             </font>
        </p>
-      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"style="margin-left:110px;">Read more</button>
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" style="margin-left:44px;">Read more</button>
+   </div> </div>
+
     <div class="w3-container">
 
       <div id="id01" class="w3-modal">
@@ -88,9 +115,9 @@
         </div>
       </div>
     </div>
-  </div>
-       <div class="diviit">
-         <img src="{% static 'images/maths.jpg' %}" class="maths" width="350px" height="350px" />
+
+<br>
+
 
   <div id="id02" class="w3-modal">
     <div class="w3-modal-content">
@@ -109,17 +136,25 @@
       </div>
     </div>
   </div>
-</div>
-        <p class="p2">
-            <font color="black">    <h3 class="hforee"><strong>Department of Mathematics:</strong></h3></font>
-           <font color="black"> The Department of Mathematics attained its present status of an independent department
+
+
+<div  class="row">
+
+
+
+   <div  class="column">    <p class="p1">
+           <font color="black" size="5px"><strong> Department of Mathematics</strong></font>
+         <font color="black"> The Department of Mathematics attained its present status of an independent department
              in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
              Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
-             students of different Engineering and Science Departments...
-           </font>
-         </p>
-         <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black" style="margin-left:80px;">Read more</button>
-        <div style="background-color: white;">
+             students of different Engineering and Science Departments.The Department also offers facilities for research work leading to Ph.D. degree in different branches of Pure
+               and Applied Mathematics.
+            </font>
+       </p>
+      <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black" style="margin-left:44px;">Read more</button>
+   </div>  <img src="{% static 'images/maths.jpg' %}" style="margin-left:50px;"   width="300px" height="300px" /> </div>
+
+</div><div style="background-color: white;">
         {% include 'basic_app/dashboard.html' %}
       </div>
       <div style="background-color: white;height: 100px;"></div>
