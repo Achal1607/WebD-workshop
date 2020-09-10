@@ -56,8 +56,17 @@ function next() {
     Ids.shift()
     Ids.push((parseInt(Ids[1]) + 1).toString())
   } else {
-    Ids.splice(0, Ids.length)
-    Ids = ['1', '2', '3']
+    if(Ids[0]==='5'){
+      Ids.splice(0, Ids.length)
+      Ids = ['6', '5', '7']}
+    else if(Ids[0]==='6'){
+      Ids.splice(0, Ids.length)
+      Ids = ['7', '1', '2']
+    }
+    else{
+      Ids.splice(0, Ids.length)
+      Ids = ['1', '2', '3']
+    }
   }
   const found=m.find(e=>e.buId===Ids[0])
   toggleVisibility(found.div)
@@ -69,9 +78,9 @@ function prev() {
     Ids.unshift((parseInt(Ids[0]) - 1).toString())
     Ids.pop()
   } else {
-    Ids.splice(0, Ids.length)
-    Ids = ['5', '6', '7']
-  }
+      Ids.splice(0, Ids.length)
+      Ids = ['5', '6', '7']
+    }
   const found=m.find(e=>e.buId===Ids[0])
   toggleVisibility(found.div)
   hideNonVisibleButtons()
