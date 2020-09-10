@@ -1,93 +1,701 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <title>IIT Roorkee</title>
+  <title>IIT Roorkee</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script src="{% static 'master.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'master.css' %}" />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="{% static 'master.css' %}" />
-  </head>
-
+  <style> 
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif;
+    }
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px;
+    }
+  </style>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-default">
-      <a class="navbar-brand back" href="{% url 'users:home' %}">
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-purple w3-card w3-left-align w3-large">
+        <a
+          class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
+          href="javascript:void(0);"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars w3-purple"></i
+        ></a>
+        <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large"> 
         <img
-          class="circular--square"
-          src="{% static 'images/iitricon.jpg' %}"
+          style="
+          border-top-left-radius: 50% 50%;
+          border-top-right-radius: 50% 50%;
+          border-bottom-right-radius: 50% 50%;
+          border-bottom-left-radius: 50% 50%;
+          height: 5vh;
+          text-decoration: none;
+          width: 5vh;"
+          src="{% static 'images/iitricon.png' %}"
           alt="Logo"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        /><em> Indian Institute Of Technology Roorkee</em></a>
+        <a
+          href="/#aboutus"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          style="text-decoration: none;"
+          >About Us</a
+        >
+        <a
+          href="/#lectures"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          style="text-decoration: none;"
+          >Lectures</a
+        >
+        
+        {% if user.is_authenticated %}
+          
+        <a
+        href="{% url 'users:update' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;"
+        >{{user.username}}</a
       >
-        <span class="navbar-toggler-icon"></span>
+      <a
+        href="{% url 'users:logout' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;"
+        >Logout</a
+      >
+      {% else %}
+      <a
+      href="{% url 'users:login' %}"
+      class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      style="text-decoration: none;"
+      >Login</a
+    >
+    <a
+      href="{% url 'users:register' %}"
+      class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      style="text-decoration: none;"
+      >Registration</a
+    >
+   {% endif %}
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div
+        id="navDemo"
+        class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large" 
+      >
+        <a href="/#aboutus" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">About Us</a>
+        <a href="/#lectures" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Lectures</a>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">{{user.username}}</a>
+        <a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Logout</a>
+        {% else %}
+        <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Login</a>
+        <a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Register</a>
+        {% endif %}
+          
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="w3-container w3-red w3-center"
+      style="
+        padding: 128px 16px;
+        background-image: url('/static/images/backimage.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <h1 class="w3-margin w3-left-align" style="font-size: 4vh">
+        International e-colloquium on
+        <br />
+        <span style="font-weight: bolder; font-size: 5vh">
+          RECENT ADVANCEMENTS IN FLUID FLOW AND HEAT TRANSFER</span
+        >
+        <br />
+        <span style="font-weight: bolder; color: #0078e1"
+          >19 Oct 2020 - 25 Oct 2020</span
+        >
+      </h1>
+      {% if not user.is_authenticated %}
+      <button
+        class="w3-button w3-blue w3-padding-large w3-large w3-margin-top w3-left w3-margin-left w3-round-xxlarge w3-hover-purple"
+      style="width:25vh;"
+        >
+        <a href="{% url 'users:register' %}" style="text-decoration: none;font-size: 2vh;">
+          Register Now
+        </a>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav navbar-right">
-          <a class="nav-item nav-link links" href="/#aboutus"
-            ><font color="#ffffff" size="6px"
-              ><em>Indian Institute Of Technology Roorkee</em></font
-            ></a
-          >
+      {% endif %}
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-threequarter">
+          <h1 class="w3-center"  style="font-weight: bolder;">Aim and objectives :</h1>
+          <h5 class="w3-padding-32">
+            The aim of this e-colloquium to bring all the renowned scientists
+            and academicians in the field of fluid dynamics and heat transfer
+            together on a platform so that young researcher from various science
+            and engineering streams can take the benefit and get awareness about
+            the recent advancements in the fields.
+          </h5>
+
+          <h1 class="w3-center"  style="font-weight: bolder;">Registration Details :</h1>
+          <h5 class="w3-padding-32">
+            <font color=#0078E1><strong><em>Registration is going on upto 10 oct 2020 </em> </strong> </font></center>
+        <ul>
+            <font color="black"><strong><em> Registration Fee/- </em> </strong> </font></center>
+          <li>
+              <font color="black" ><em> Indian Researcher / Academician / Student - Rs. 1,000/-</em></font>
+          </li>
+          <li>
+              <font color="black"  ><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
+          </h5>
+          </div>
+        <!-- <div class="w3-third w3-center">
+          <i class="fa fa-anchor w3-padding-64 w3-text-blue"></i>
+        </div> -->
+      </div>
+    </div>
+    <!-- Second Grid -->
+    <div id="aboutus">
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+      <div class="w3-content">
+        <h1 class="w3-center" style="font-weight: bolder;">About Us :</h1>
+        <div class="w3-third w3-center">
+          <!-- <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i> -->
+          <img src="{% static 'images/iitrimage1.jpg' %}" style="max-width: 300px;max-height: 300px;" />
         </div>
-        <div class="navbar-nav navbar-right ml-auto">
-          <a class="nav-item nav-link links" href="/#aboutus"
-            ><font color="#ffffff">About Us</font></a
-          >
-          <a class="nav-item nav-link links" href="/#events"
-            ><font color="#ffffff">Lectures</font></a
-          >
-          {% if user.is_authenticated %}
-          <a class="nav-item nav-link links" href="{% url 'users:update' %}"
-            ><font color="#ffffff">{{user.username}}</font></a
-          >
-          <a class="nav-item nav-link links" href="{% url 'users:logout' %}"
-            ><font color="#ffffff">Logout</font></a
-          >
-          {% else %}
-          <a class="nav-item nav-link links" href="{% url 'users:login' %}"
-            ><font color="#ffffff">Login</font></a
-          >
-          <a class="nav-item nav-link links" href="{% url 'users:register' %}"
-            ><font color="#ffffff">Registration</font></a
-          >
-          {% endif %}
+
+        <div class="w3-twothird">
+        <h5 class="w3-margin-left" style="margin-top: 0px;">
+          <strong> IIT Roorkee: </strong>
+          Institute of Technology Roorkee is among the foremost of institutes of national importance
+          in higher technological education and in engineering, basic and applied research. Since its establishment,
+          the Institute has played a vital role in providing the technical manpower and know-how to the country and in
+          pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
+          contributed to all sectors of technological development.It has also been considered a trend-setter in the
+          area of education and research in the field of science, technology, and engineering. The Institute had
+          celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence....
+          <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-margin-left">Read more</button>
+        </h5>
+        </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+      <div class="w3-content">
+        <div class="w3-twothird">    
+        <h5 class="w3-margin-left" style="margin-top: 0px;">
+          <strong>Department of Mathematics:</strong>
+            The Department of Mathematics attained its present status of an independent department
+             in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
+             Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
+             students of different Engineering and Science Departments...
+             <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black w3-margin-left">Read more</button>
+      </h5>
+        </div>
+        <div class="w3-third w3-center">
+          <!-- <i class="fa fa-anchor w3-padding-64 w3-text-red"></i> -->
+          <img src="{% static 'images/maths.jpg' %}" style="max-width: 300px;max-height: 300px;" />
         </div>
       </div>
-    </nav>
-    <div class="bg">{% block body_block %} {% endblock %}</div>
+    </div>
+  </div>
+  <div id="lectures">
+    <div class="w3-row-padding w3-padding-64 w3-container w3-center">
+      <div class="w3-rest">
+        <h2 style="font-weight: bolder;">Lecture Track</h2>
+  <span class="prev">
+    <button id='previous' class="fill" style="width: 50px;border: none;" onclick="prev()"> <i class="fa fa-chevron-left"
+        aria-hidden="true"></i></button>
+  </span>
+  <button id="1" class="fill active customize ml-1" onclick="toggleVisibility('Oct19');" >October 19</button>
+  <button id="2" class="fill customize ml-1" onclick="toggleVisibility('Oct20');">October 20</button>
+  <button id="3" class="fill customize ml-1" onclick="toggleVisibility('Oct21');">October 21</button>
+  <button id="4" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct22');">October 22</button>
+  <button id="5" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct23');">October 23</button>
+  <button id="6" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct24');">October 24</button>
+  <button id="7" class="fill customize ml-1" style="display: none;" onclick="toggleVisibility('Oct25');">October 25</button>
+  <span class="next ml-1">
+    <button id='nxt' class="fill" style="width: 50px;border: none;" onclick="next()"> <i class="fa fa-chevron-right"
+        aria-hidden="true"></i></button>
+  </span>
+  </div>
+  </div>
+  <div id="Oct19">
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <!-- <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i> -->
+				<img src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
 
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+        <span style="font-size: 4vh;">Title</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 1</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Gautam Biswas <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bolder;">10:00 AM-11:30 AM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+    </div>
+
+    <div class="w3-twothird">
+    <h5 class="w3-margin-left" style="margin-top: 0px;">
+      <span style="font-size: 4vh;">Catch and Release of Gas Bubbles in a Soft Grannular Medium</span>
+      <br>
+      <span style="font-size: 2.8vh;">Session 2</span>
+      <br>
+      <span style="font-size: 2.8vh;color:#0078e1;"> Chris MacMinn <span style="font-size: 50px;">&#10230;</span></span>
+      <br>
+      <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+    </h5>
+    </div>
+    </div>
+</div>
+</div>
+<div id="Oct20" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+				<span style="font-size: 4vh;">2nd Law of Thermodynamics and its Application: LNG Regasification Terminals to Generate Power</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 2</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Yonus Cengel <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+<div id="Oct21" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+        <span style="font-size: 4vh;">Using AI for Inverse Decisions in Health Transfer </span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 2</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> P Nithiarasu <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+				<span style="font-size: 4vh;">Convection of Bingham Fluid in Porous Media (Numerical Aspects)</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 3</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Andrew Rees <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+        <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div id="Oct22" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+				<span style="font-size: 4vh;">How can Mathematics help to keep the World clean? </span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 2</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Ian Giriffiths <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+        <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+<div id="Oct23" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+        <span style="font-size: 4vh;">Mammatus Cloud Formation by Settling and Evaporation</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 1</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Rama Govindrajan <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Adrian Bejan.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+        <span style="font-size: 4vh;">Evolutionary Design with Freedom</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 3</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Adrian Bejan <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+        <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div id="Oct24" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+				<span style="font-size: 4vh;">Constructal Generation of Configuration in Nature: Fractal Tree Flow Networks and Allometric Laws</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 2</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Antonio F.Miguel <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div id="Oct25" style="display: none;">
+  <div class="w3-row-padding w3-padding-64 w3-container">  
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+				<img src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="Speaker Picture" style="height: 300px;width: 300px;">
+      </div>
+  
+      <div class="w3-twothird">
+      <h5 class="w3-margin-left" style="margin-top: 0px;">
+				<span style="font-size: 4vh;">On Toroidal Drops in Viscous Flow</span>
+				<br>
+				<span style="font-size: 2.8vh;">Session 2</span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;"> Avinoam Nir <span style="font-size: 50px;">&#10230;</span></span>
+				<br>
+				<span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
+      </h5>
+      </div>
+      </div>
+  </div>
+</div>
+</div>
+<div id="DivNotable" class="w3-row-padding w3-padding-64 w3-container w3-center w3-light-grey" >  
+    <h1 style="font-weight: bolder;">Notable Speakers</h1>
+    <div class="w3-quarter w3-margin-top">
+      <span class="prev">
+				<button id='previous1' class="fill" style="width: 50px;border: none;" onclick="prev1()"> <i class="fa fa-chevron-left"
+						aria-hidden="true"></i></button>
+			</span>
+    </div>
+    <div id="spk1" class="w3-quarter w3-margin-top">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Adrian Bejan.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Adrian Benjan</h1>
+          <h3>Department Of Mechanical Engineering,Duke University</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk2" class="w3-quarter w3-margin-top">
+      <div class="w3-card-4">
+				<img class="w3-circle"  src="{% static 'images/spk/Suman Chakraborty.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Suman Chakraborty</h1>
+          <h3>Department Of Mechanical Engineering,IIT Kharagpur</h3>
+        </div>
+      </div> 
+    </div>
+    
+    <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Detlef Lohse.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Detlef Lohse</h1>
+          <h3>Department of Physics of Fluids, University of Twente</h3>   
+        </div>
+      </div>
+    </div>
+    <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Antonio F. Miguel</h1>
+          <h3>School of Science and Technology, University of Evora</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>P. Nithiarasu</h1>
+          <h3>College of Engineering, Swansea University</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Andrew Rees</h1>
+          <h3>Department of Mechanical Engineering, University of Bath</h3>
+        </div>
+      </div>
+    </div>
+    <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Avinoam Nir</h1>
+          <h3>Chemical Engineering Faculty, Israel Institute Technion</h3>  
+        </div>
+      </div>
+    </div>
+    <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Bernard Weigand.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Bernhard Weigand</h1>
+          <h3>Institute of Aerospace Thermodynamics, University of Sttutguard</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Rama Govindrajan</h1>
+          <h3>International Center for Theoretical Sciences (ICTS), Banglore</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/S Sundar.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>S. Sundar</h1>
+          <h3>Department of Mathematics, IIT Madras</h3>   
+        </div>
+      </div>
+    </div>
+    <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Ian Giriffiths</h1>
+          <h3>Oxford Center for Industrial and Applied Mathematics, University of Oxford</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Chris MacMinn</h1>
+          <h3>Civil Engineering Research, University of Oxford</h3>   
+        </div>
+      </div>
+    </div>
+    <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Somnath Bhattacharya.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Somnath Bhattacharya</h1>
+          <h3>Department of Mathematics, IIT Kharagpur</h3>  
+        </div>
+      </div>
+    </div>
+    <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Gautam Biswas</h1>
+          <h3>Department of Mechanical Engineering, IIT Kanpur</h3>    
+        </div>
+      </div>
+    </div>
+    <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;">
+      <div class="w3-card-4">
+        <img class="w3-circle" src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="user" width="170px" height="170px" style="padding-top: 10px;">
+        <div class="w3-container w3-center">
+          <h1>Yonus Cengel</h1>
+          <h3>Faculty of Engineering, University of Nevada</h3>   
+        </div>
+      </div>
+    </div>
+    <div class="w3-quarter w3-margin-top">
+			<span class="next">
+				<button id='nxt1' class="fill" style="width: 50px;border: none;" onclick="next1()"> <i class="fa fa-chevron-right"
+					aria-hidden="true"></i></button>
+      </span>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-center w3-purple">
+      <div class="w3-xlarge w3-padding-32">
+        <div class="w3-row-padding">
+        <div class="w3-half">
+          <span class="w3-left" style="font-weight: 400px;font-size: 4vh;">SITEMAP :</span>
+          <br>
+        <ul style="list-style-type: none;text-align: left;font-size: 3vh;">
+          <li><a href="/#" style="color:white">Home</a></li>
+          <li><a href="/#aboutus" style="color:white">About</a></li>
+          <li><a href="/#events" style="color:white">Lecture Track</a></li>
+          <li><a href="/#DivNotable" style="color:white">Notable Speakers</a></li>
+        </ul>
+      </div>
+        <div class="w3-half w3-right">
+          <span style="font-weight: 400px;font-size: 4vh;">Contact Us:</span>
+              <ul style="list-style-type: none;font-size: 3vh;">
+                <a href="https://ma.iitr.ac.in/" style="color:white">
+                  <li> Department of Mathematics,</li>
+                  <li>Indian Institute of Technology Roorkee,</li>
+                  <li>Roorkee – 247 667, Uttarakhand, India</li>
+                </a>  
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <p>
+        Powered by
+        <a href="https://iitr.ac.in"> IIT Roorkee</a>
+      </p>
+    </footer>
+<!-- modal-->
+
+<div class="w3-container">
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+      <p class="p1">
+
+        <font color="black"><h3 style="font-weight: bold;">IIT Roorkee:</h3> Institute of Technology Roorkee is among the foremost of institutes of national importance
+          in higher technological education and in engineering, basic and applied research. Since its establishment,
+          the Institute has played a vital role in providing the technical manpower and know-how to the country and in
+          pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
+          contributed to all sectors of technological development.It has also been considered a trend-setter in the
+          area of education and research in the field of science, technology, and engineering. The Institute had
+          celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence.
+            The Institute offers Bachelor's Degree courses in 10 disciplines of
+            Engineering and Architecture and Postgraduate's Degree in 55 disciplines of Engineering, Applied Science,
+            Architecture and planning. The Institute has facility for doctoral work in all Departments and Research
+            Centers.  </font>
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p class="p1">
+         <font color="black">  <h3 style="font-weight: bold;">Department of Mathematics:</h3>The Department of Mathematics attained its present status of an independent department
+           in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
+           Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
+           students of different Engineering and Science Departments.The Department also offers facilities for research work leading to Ph.D. degree in different branches of Pure
+             and Applied Mathematics. Department had collaborated with different National and International
+             organizations and has expertise in various diversified fields of Mathematics. Our Department also offers
+             consultancies in Mathematical modeling and solution of various industrial and real-life problems.
+         </font>
+     </p>
+    </div>
+  </div>
+</div>
+    <script>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
   </body>
 </html>
