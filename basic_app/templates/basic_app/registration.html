@@ -148,8 +148,11 @@ crossorigin="anonymous"
 		<div class="d-flex justify-content-center">
 			<h3 id="form-title">REGISTER ACCOUNT</h3>
 		</div>
+		
+		<div class="alert alert-info" role="alert">
+				All Fields Are Required
+		</div>
 		<div class="d-flex justify-content-center form_container">
-
 			<form method="POST" action="">
 				{% csrf_token %}
 				<div class="input-group mb-3">
@@ -188,6 +191,24 @@ crossorigin="anonymous"
 					</div>
 					{{form.password2}}
 				</div>
+				<div class="input-group mb-2">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-book"></i></span>
+					</div>
+					{{form1.position}}
+				</div>
+				<!-- <div class="input-group mb-2">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-key"></i></span>
+					</div>
+					{{form1.isIITR}}
+				</div> -->
+				<div class="input-group mb-2">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-university"></i></span>
+					</div>
+					{{form1.institute}}
+				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
 					<input class="btn login_btn" type="submit" value="Register Account">
 				</div>
@@ -215,6 +236,17 @@ crossorigin="anonymous"
 	form_fields[4].placeholder = 'Email';
 	form_fields[5].placeholder = 'Enter password';
 	form_fields[6].placeholder = 'Re-enter Password';
+	form_fields[7].placeholder = 'University Name';
+	const x=document.getElementById('id_position')
+	x.value=x[1]
+	let op=document.createElement('option')
+	op.value=""
+	op.disabled=true
+	op.hidden=true
+	op.text="Position"
+	op.selected=true
+	x.add(op,x[0])
+	x[1].remove()
 	for (var field in form_fields) {
 		form_fields[field].className += ' form-control'
 	}

@@ -10,7 +10,7 @@ from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import CreateUserForm, UserInfoForm
+from .forms import CreateUserForm, UserInfoForm,InstituteInfoForm
 from .models import UserInfo
 
 
@@ -19,15 +19,21 @@ def registerPage(request):
         return redirect('users:home')
     else:
         form = CreateUserForm()
+        form1 = InstituteInfoForm()
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
-            if form.is_valid():
-                form.save()
-                user = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' + user)
+            form1 = InstituteInfoForm(request.POST)
+            if form.is_valid() and form1.is_valid():
+                user=form.save()
+                user.save() 
+                u=form1.save(commit=False)
+                username = form.cleaned_data.get('username')
+                u.user=user
+                u.save()
+                messages.success(request, 'Account was created for ' + username)
                 return redirect('users:login')
 
-        context = {'form': form}
+        context = {'form': form,'form1':form1}
         return render(request, 'basic_app/registration.html', context)
 
 
