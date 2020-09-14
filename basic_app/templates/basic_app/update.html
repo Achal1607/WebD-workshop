@@ -159,12 +159,15 @@ crossorigin="anonymous"
                 </div>
                 {{form.institute}}
             </div>
+            
+            {% if u.isIITR == "NO" %}
             <div class="input-group mb-3">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-receipt"></i></span>
                 </div>
                 {{form.pay_num}}
             </div>
+            {% endif %}
             <div id="hide" class="input-group mb-3">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-receipt"></i></span>
