@@ -179,6 +179,38 @@ crossorigin="anonymous"
 </div>
 </div>
 {% endif %}
+{% if user.is_authenticated and u.isIITR == "NO" and not u.pay_num  %}
+<div class="w3-row-padding w3-padding-32 w3-container w3-content">
+  <div class="w3-card-4 w3-white w3-center">
+    <header class="w3-container w3-blue" id="details">
+      <h2>
+        <font color="#202060"><strong>
+            <center>Payment Details</center>
+          </strong></font>
+      </h2>
+      <h5>
+        <font color="#ca3e47"><strong>
+            <center>For online payment</center>
+          </strong></font>
+      </h5>
+    </header>
+    <div class="w3-container w3-padding-32">
+      <h6><strong>NAME OF THE BANK : STATE BANK OF INDIA</strong>
+      </h6><br>
+      <h6><strong>BRANCH OFFICE : IIT ROORKEE</strong></h6><br>
+      <h6><strong>ACCOUNT NAME : Conference, Seminar & Symposium & Wshop IITROORKEE</strong>
+      </h6><br>
+      <h6><strong>ACCOUNT NO. : 33136732957</strong></h6><br>
+      <h6><strong>BRANCH CODE : 1069</strong></h6><br>
+      <h6><strong>IFSE CODE : SBIN0001069</strong></h6>
+      <br>
+      <h6><strong>MICR CODE : 247002094</strong></h6><br>
+      <h6><strong>Reference : E-Colloquium (CONFR-112-MAT)</strong></h6>
+    </div>
+  </div>
+</div>  
+{% endif %}
+  
 	</header>
 <script>
     var form_fields = document.getElementsByTagName('input')

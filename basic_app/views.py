@@ -96,4 +96,7 @@ def logoutUser(request):
 
 
 def home(request):
-    return render(request, 'base.html', {})
+    u=''
+    if request.user.is_authenticated:
+        u=UserInfo.objects.get(user=User.objects.get(username=request.user.username))
+    return render(request, 'base.html', {'u':u})

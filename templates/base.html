@@ -58,35 +58,23 @@
 
       <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Focused Area</a>
-        {% if user.is_authenticated %}
-          
-        <a
-        href="{% url 'users:update' %}"
+      {% if user.is_authenticated %}
+
+      <a href="{% url 'users:logout' %}"
         class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;"
-        >{{user.username}}</a
-      >
-      <a
-        href="{% url 'users:logout' %}"
+        style="text-decoration: none;">Logout</a>
+      <a href="{% url 'users:update' %}"
         class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;"
-        >Logout</a
-      >
+        style="text-decoration: none;">{{user.username}}</a>
       {% else %}
-      <a
-      href="{% url 'users:login' %}"
-      class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-      style="text-decoration: none;"
-      >Login</a
-    >
-    <a
-      href="{% url 'users:register' %}"
-      class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-      style="text-decoration: none;"
-      >Registration</a
-    >
-   {% endif %}
-      </div>
+      <a href="{% url 'users:login' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
+        style="text-decoration: none;">Login</a>
+      <a href="{% url 'users:register' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
+        style="text-decoration: none;">Registration</a>
+      {% endif %}
+    </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -97,14 +85,18 @@
         style="text-decoration: none;" download>Schedule</a>
       <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
         Area</a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">{{user.username}}</a>
-        <a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Logout</a>
-        {% else %}
-        <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Login</a>
-        <a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Register</a>
-        {% endif %}
-          
+      {% if user.is_authenticated %}
+      <a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
+        style="text-decoration: none;">Logout</a>
+      <a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
+        style="text-decoration: none;">{{user.username}}</a>
+      {% else %}
+      <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
+        style="text-decoration: none;">Login</a>
+      <a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
+        style="text-decoration: none;">Register</a>
+      {% endif %}
+
     </div>
   </div>
 
@@ -115,6 +107,16 @@
         background-repeat: no-repeat;
         background-size: cover;
       ">
+    {% if user.is_authenticated and u.isIITR == "NO" and not u.pay_num  %}
+    <div class="w3-panel w3-yellow w3-margin-top" style="padding: 0px;margin-top: 0px;" data-aos="fade-down"
+      data-aos-duration="2500">
+      <p> <strong>After Payment Successful Please send the payment
+          receipt to <font color="red"> colloquium2020iitr@gmail.com</font> and enter transaction number in your account
+          details </strong>
+          <a href="/update/#details" style="color: red;">Payment Details</a>
+        </p>
+    </div>
+    {% endif %}
     <div data-aos="fade-down" data-aos-duration="2500">
       <h1 class="w3-margin w3-left-align w3-padding-32" style="font-size: 4vh;color: white;">
         International e-colloquium on
@@ -210,18 +212,18 @@
         </h5>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
-      <div id='Objectives' >
-      <div class="w3-light-gray w3-padding-32 w3-center" data-aos="fade-up" data-aos-duration="3000">
-        <h1 style="font-weight: bolder;">Aim and objectives</h1>
-        <h5>
-          The aim of this e-colloquium to bring all the renowned scientists
-          and academicians in the field of fluid dynamics and heat transfer
-          together on a platform so that young researcher from various science
-          and engineering streams can take the benefit and get awareness about
-          the recent advancements in the fields.
-        </h5>
+      <div id='Objectives'>
+        <div class="w3-light-gray w3-padding-32 w3-center" data-aos="fade-up" data-aos-duration="3000">
+          <h1 style="font-weight: bolder;">Aim and objectives</h1>
+          <h5>
+            The aim of this e-colloquium to bring all the renowned scientists
+            and academicians in the field of fluid dynamics and heat transfer
+            together on a platform so that young researcher from various science
+            and engineering streams can take the benefit and get awareness about
+            the recent advancements in the fields.
+          </h5>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
@@ -859,6 +861,9 @@
               <font color="white"><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
             </li>
 
+            {% if user.is_authenticated and u.isIITR == "NO" and not u.pay_num  %}
+            <li><a href="/update/#details" style="color: white;">Payment Details</a></li>
+            {% endif %}
           </ul>
         </div>
         <div class="w3-half">
@@ -879,7 +884,7 @@
     </p>
   </footer>
   <!-- modal-->
-
+  <!-- 
   <div class="w3-container">
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content">
@@ -929,7 +934,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
   <script>
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {
