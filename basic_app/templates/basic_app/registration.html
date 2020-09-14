@@ -53,91 +53,77 @@ crossorigin="anonymous"
     .fa-anchor,
     .fa-coffee {
       font-size: 200px;
-    }
+	}
+	ul li {list-style: none;display: inline-block;margin-left:10px } 
   </style>
   <body>
 	<div class="w3-top">
 		<div class="w3-bar w3-purple w3-card w3-left-align w3-large">
-		  <a
-			class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
-			href="javascript:void(0);"
-			onclick="myFunction()"
-			title="Toggle Navigation Menu"
-			><i class="fa fa-bars w3-purple"></i
-		  ></a>
-		  <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;"> 
-		  <img
-			style="
-			border-top-left-radius: 50% 50%;
-			border-top-right-radius: 50% 50%;
-			border-bottom-right-radius: 50% 50%;
-			border-bottom-left-radius: 50% 50%;
-			height: 5vh;
-			width: 5vh;"
-			src="{% static 'images/iitricon.png' %}"
-			alt="Logo"
-		  /><em> Indian Institute Of Technology Roorkee</em></a>
-		  <a
-			href="/#aboutus"
+		  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
+			href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+			  class="fa fa-bars w3-purple"></i></a>
+		  <a href="https://www.iitr.ac.in/departments/MA/pages/index.html" class="w3-bar-item w3-button w3-padding-large">
+			Home</a>
+		  <a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Objectives</a>
+		  <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Speakers</a>
+		  <a href="{% static 'Schedule.pdf' %}" download
 			class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Schedule</a>
+	
+		  <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Focused Area</a>
+			{% if user.is_authenticated %}
+			  
+			<a
+			href="{% url 'users:update' %}"
+			class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
 			style="text-decoration: none;"
-			>About Us</a
+			>{{user.username}}</a
 		  >
 		  <a
-			href="/#lectures"
-			class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			href="{% url 'users:logout' %}"
+			class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
 			style="text-decoration: none;"
-			>Lectures</a
+			>Logout</a
 		  >
-		  
-		  {% if user.is_authenticated %}
-			
-		  <a
-		  href="{% url 'users:update' %}"
-		  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-		  style="text-decoration: none;"
-		  >{{user.username}}</a
-		>
-		<a
-		  href="{% url 'users:logout' %}"
-		  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-		  style="text-decoration: none;"
-		  >Logout</a
-		>
-		{% else %}
-		<a
-		href="{% url 'users:login' %}"
-		class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-		style="text-decoration: none;"
-		>Login</a
-	  >
-	  <a
-		href="{% url 'users:register' %}"
-		class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-		style="text-decoration: none;"
-		>Registration</a
-	  >
-	 {% endif %}
-		</div>
-  
-		<!-- Navbar on small screens -->
-		<div
-		  id="navDemo"
-		  class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large" 
-		>
-		  <a href="/#aboutus" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">About Us</a>
-		  <a href="/#lectures" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Lectures</a>
-		  
-		  {% if user.is_authenticated %}
-		  <a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">{{user.username}}</a>
-		  <a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Logout</a>
 		  {% else %}
-		  <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Login</a>
-		  <a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Register</a>
-		  {% endif %}
-			
+		  <a
+		  href="{% url 'users:login' %}"
+		  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
+		  style="text-decoration: none;"
+		  >Login</a
+		>
+		<a
+		  href="{% url 'users:register' %}"
+		  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
+		  style="text-decoration: none;"
+		  >Registration</a
+		>
+	   {% endif %}
+		  </div>
+	
+		<!-- Navbar on small screens -->
+		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+		  <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
+			style="text-decoration: none;">Objectives</a>
+		  <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
+		  <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
+			style="text-decoration: none;" download>Schedule</a>
+		  <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
+			Area</a>
+			{% if user.is_authenticated %}
+			<a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">{{user.username}}</a>
+			<a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Logout</a>
+			{% else %}
+			<a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Login</a>
+			<a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large w3-right" style="text-decoration: none;">Register</a>
+			{% endif %}
+			  
 		</div>
 	  </div>
+	
   
 	<header
 	  class="w3-container w3-center w3-margin-top"
@@ -146,13 +132,13 @@ crossorigin="anonymous"
 <div class="d-flex justify-content-center">
 	<div class="user_card">
 		<div class="d-flex justify-content-center">
-			<h3 id="form-title">REGISTER ACCOUNT</h3>
+			<h3 id="form-title" style="font-weight: bold;">REGISTRATION</h3>
 		</div>
-		<div class="d-flex justify-content-center form_container">
+		<div class="d-flex justify-content-center form_container w3-margin-top">
 
 			<form method="POST" action="">
 				{% csrf_token %}
-				<div class="input-group mb-3">
+				<div class="input-group mb-3" style="z-index: 0;">
 					<div class="input-group-append">
 						<span class="input-group-text"><i class="fas fa-user"></i></span>
 					</div>
@@ -170,23 +156,45 @@ crossorigin="anonymous"
 					</div>
 					{{form.last_name}}
 				</div>
-				<div class="input-group mb-2">
+				<div class="input-group mb-3">
 					<div class="input-group-append">
 						<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
 					</div>
 					{{form.email}}
 				</div>
-				<div class="input-group mb-2">
+				<div class="input-group mb-3">
 					<div class="input-group-append">
 						<span class="input-group-text"><i class="fas fa-key"></i></span>
 					</div>
 					{{form.password1}}
 				</div>
-				<div class="input-group mb-2">
+				<div class="input-group mb-3">
 					<div class="input-group-append">
 						<span class="input-group-text"><i class="fas fa-key"></i></span>
 					</div>
 					{{form.password2}}
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-phone"></i></span>
+					</div>
+					{{form1.ph_num}}
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-book"></i></span>
+					</div>
+					{{form1.position}}
+				</div>
+				<div class="input-group mb-3" style="font-weight: bold;">
+					Are you of IIT Roorkee?
+					<span style="list-style-type: none;">{{form1.isIITR}}</span>
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-append">
+						<span class="input-group-text"><i class="fas fa-university"></i></span>
+					</div>
+					{{form1.institute}}
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
 					<input class="btn login_btn" type="submit" value="Register Account">
@@ -215,7 +223,33 @@ crossorigin="anonymous"
 	form_fields[4].placeholder = 'Email';
 	form_fields[5].placeholder = 'Enter password';
 	form_fields[6].placeholder = 'Re-enter Password';
+	form_fields[7].placeholder = 'Contact Number';
+	form_fields[10].placeholder = 'Affiliation';
+	const x=document.getElementById('id_position')
+	let op=document.createElement('option')
+	op.value=""
+	op.disabled=true
+	op.hidden=true
+	op.text="Position"
+	op.selected=true
+	op.style.color='gray'
+	x.add(op,x[0])
+	form_fields[8].inlineLabels 
+	form_fields[8].classList.add('w3-radio')
+	form_fields[9].classList.add('w3-radio')
 	for (var field in form_fields) {
 		form_fields[field].className += ' form-control'
 	}
 </script>
+
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>

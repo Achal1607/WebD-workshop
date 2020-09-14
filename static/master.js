@@ -98,7 +98,7 @@ function hideNonVisibleButtons() {
   }
 }
 
-divSpeaker=["spk1","spk2","spk3","spk4","spk5","spk6","spk7","spk8","spk9","spk10","spk11","spk12","spk13","spk14","spk15"]
+divSpeaker=["spk1","spk2","spk3","spk4","spk5","spk6","spk7","spk8","spk9","spk10","spk11","spk12","spk13","spk14","spk15","spk16","spk17"]
 activeSpk=["spk1","spk2"]
 
 function next1(){
@@ -107,7 +107,7 @@ function next1(){
     activeSpk.shift()
   } else {
     activeSpk.splice(0, activeSpk.length)
-    activeSpk=["spk15","spk1"]
+    activeSpk=["spk17","spk1"]
   }
   SpeakerShow()
 }
@@ -118,7 +118,7 @@ if (activeSpk[0]!==divSpeaker[0]) {
     activeSpk.pop()
   } else {
     activeSpk.splice(0, activeSpk.length)
-    activeSpk=["spk15","spk1"]
+    activeSpk=["spk17","spk1"]
   }
   SpeakerShow()
 }
