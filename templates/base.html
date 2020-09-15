@@ -52,9 +52,9 @@
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Speakers</a>
-      <a href="{% static 'Schedule.pdf' %}" target="blank"
+      <a href="#"
         class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;">Schedule</a>
+        style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
 
       <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Focused Area</a>
@@ -83,9 +83,8 @@
       <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
-      <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
-        target="blank"
-        style="text-decoration: none;">Schedule</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large"
+        onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
       <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
         Area</a>
       {% if user.is_authenticated %}
@@ -131,13 +130,13 @@
         <br>
         {% if not user.is_authenticated %}
         <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:register' %}"
-          style="text-decoration:none;">Register Now</a></button>
+            style="text-decoration:none;">Register Now</a></button>
         {% else %}
         <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:payment' %}"
-          style="text-decoration:none;">Instruction For Payment</a></button>
+            style="text-decoration:none;">Instruction For Payment</a></button>
         {% endif %}
-            <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% static 'Brochure.pdf' %}"
-                style="text-decoration:none;" download>Download Brochure</a></button>
+        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% static 'Brochure.pdf' %}"
+            style="text-decoration:none;" download>Download Brochure</a></button>
       </h1>
     </div>
   </header>
@@ -713,7 +712,8 @@
       </div>
     </div>
 
-    <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Detlef Lohse.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -722,7 +722,8 @@
         </div>
       </div>
     </div>
-    <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -731,7 +732,8 @@
         </div>
       </div>
     </div>
-    <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -740,7 +742,8 @@
         </div>
       </div>
     </div>
-    <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -749,7 +752,8 @@
         </div>
       </div>
     </div>
-    <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -758,7 +762,8 @@
         </div>
       </div>
     </div>
-    <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Bernard Weigand.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -767,7 +772,8 @@
         </div>
       </div>
     </div>
-    <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -776,7 +782,8 @@
         </div>
       </div>
     </div>
-    <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/S Sundar.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -785,7 +792,8 @@
         </div>
       </div>
     </div>
-    <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -794,7 +802,8 @@
         </div>
       </div>
     </div>
-    <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -803,7 +812,8 @@
         </div>
       </div>
     </div>
-    <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Somnath Bhattacharya.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -812,7 +822,8 @@
         </div>
       </div>
     </div>
-    <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -821,7 +832,8 @@
         </div>
       </div>
     </div>
-    <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -830,7 +842,8 @@
         </div>
       </div>
     </div>
-    <div id="spk16" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk16" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/S V Raghuram Rao.jpeg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -839,7 +852,8 @@
         </div>
       </div>
     </div>
-    <div id="spk17" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+    <div id="spk17" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
+      data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/James J.Feng.jpg' %}" alt="user">
         <div class="w3-container w3-center">
@@ -867,9 +881,8 @@
             </center>
             <li>
               <font color="white"><em> It is free for IIT Roorkee Students</em></font>
-            </li
-            <li>
-              <font color="white"><em> Indian Researcher / Academician / Student - Rs. 1,000/-</em></font>
+            </li <li>
+            <font color="white"><em> Indian Researcher / Academician / Student - Rs. 1,000/-</em></font>
             </li>
             <li>
               <font color="white"><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
@@ -895,35 +908,74 @@
     </p>
   </footer>
   <!-- modal-->
-<!--   
+
   <div class="w3-container">
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content">
-        <div class="w3-container">
-          <span onclick="document.getElementById('id01').style.display='none'"
-            class="w3-button w3-display-topright">&times;</span>
-          <p class="p1">
-
-            <font color="black">
-              <h3 style="font-weight: bold;">IIT Roorkee:</h3> Institute of Technology Roorkee is among the foremost of
-              institutes of national importance
-              in higher technological education and in engineering, basic and applied research. Since its establishment,
-              the Institute has played a vital role in providing the technical manpower and know-how to the country and
-              in
-              pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
-              contributed to all sectors of technological development.It has also been considered a trend-setter in the
-              area of education and research in the field of science, technology, and engineering. The Institute had
-              celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence.
-              The Institute offers Bachelor's Degree courses in 10 disciplines of
-              Engineering and Architecture and Postgraduate's Degree in 55 disciplines of Engineering, Applied Science,
-              Architecture and planning. The Institute has facility for doctoral work in all Departments and Research
-              Centers.
-            </font>
-          </p>
-        </div>
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <h3 style="font-weight: bold;color: #0078e1;" class="w3-center">Schedule</h3>
+        <a href="{% static 'Schedule.pdf' %}" download>Download</a>
+        <br>
+        <table class="w3-table-all">
+          <tr>
+            <th>Day</th>
+            <th>Session I</th>
+            <th>Session II</th>
+            <th>Session III</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td>(10 AM - 11:30 AM)</td>
+            <td>(3 PM - 4 PM)</td>
+            <td>(7 PM - 8:30 PM)</td>
+          </tr>
+          <tr>
+            <td>19th Oct</td>
+            <td>Gautam Biswas</td>
+            <td>Chris MacMinn</td>
+            <td>Detlef Lohse</td>
+          </tr>
+          <tr>
+            <td>20th Oct</td>
+            <td>Suman Chakraborty</td>
+            <td>Yonus Cengel</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>21st Oct</td>
+            <td>James J. Feng</td>
+            <td>P. Nithiarasu</td>
+            <td>Andrew Rees</td>
+          </tr>
+          <tr>
+            <td>22nd Oct</td>
+            <td>S Sundar</td>
+            <td>Ian Griffiths</td>
+            <td>Bernard Weigand</td>
+          </tr>
+          <tr>
+            <td>23rd Oct</td>
+            <td>Rama Govindrajan</td>
+            <td></td>
+            <td>Adrian Bejan</td>
+          </tr>
+          <tr>
+            <td>24th Oct</td>
+            <td>Raghu Ram Rao</td>
+            <td>Antonio F. Miguel</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>25th Oct</td>
+            <td>Somnath Bhattacharya</td>
+            <td>Avinoam Nir</td>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
-  </div> -->
+  </div>
   <script>
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {

@@ -58,7 +58,7 @@
 				style="text-decoration: none;">Objectives</a>
 			<a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
 				style="text-decoration: none;">Speakers</a>
-			<a href="{% static 'Schedule.pdf' %}"  target="blank"
+			<a href="#" onclick="document.getElementById('id01').style.display='block'"
 				class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
 				style="text-decoration: none;">Schedule</a>
 
@@ -90,8 +90,8 @@
 				style="text-decoration: none;">Objectives</a>
 			<a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large"
 				style="text-decoration:none">Speakers</a>
-			<a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
-				style="text-decoration: none;"  target="blank">Schedule</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding-large"
+				style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'">Schedule</a>
 			<a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
 				Area</a>
 			{% if user.is_authenticated %}
@@ -157,6 +157,76 @@
 			</div>
 		</div>
 	</header>
+	
+  <!-- modal-->
+
+  <div class="w3-container">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <h3 style="font-weight: bold;color: #0078e1;" class="w3-center">Schedule</h3>
+        <a href="{% static 'Schedule.pdf' %}" download>Download</a>
+        <br>
+        <table class="w3-table-all">
+          <tr>
+            <th>Day</th>
+            <th>Session I</th>
+            <th>Session II</th>
+            <th>Session III</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td>(10 AM - 11:30 AM)</td>
+            <td>(3 PM - 4 PM)</td>
+            <td>(7 PM - 8:30 PM)</td>
+          </tr>
+          <tr>
+            <td>19th Oct</td>
+            <td>Gautam Biswas</td>
+            <td>Chris MacMinn</td>
+            <td>Detlef Lohse</td>
+          </tr>
+          <tr>
+            <td>20th Oct</td>
+            <td>Suman Chakraborty</td>
+            <td>Yonus Cengel</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>21st Oct</td>
+            <td>James J. Feng</td>
+            <td>P. Nithiarasu</td>
+            <td>Andrew Rees</td>
+          </tr>
+          <tr>
+            <td>22nd Oct</td>
+            <td>S Sundar</td>
+            <td>Ian Griffiths</td>
+            <td>Bernard Weigand</td>
+          </tr>
+          <tr>
+            <td>23rd Oct</td>
+            <td>Rama Govindrajan</td>
+            <td></td>
+            <td>Adrian Bejan</td>
+          </tr>
+          <tr>
+            <td>24th Oct</td>
+            <td>Raghu Ram Rao</td>
+            <td>Antonio F. Miguel</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>25th Oct</td>
+            <td>Somnath Bhattacharya</td>
+            <td>Avinoam Nir</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 	<script>
 		// Used to toggle the menu on small screens when clicking on the menu button
 		function myFunction() {
