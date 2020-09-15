@@ -15,4 +15,7 @@ class CreateUserForm(UserCreationForm):
 class UserInfoForm(forms.ModelForm):
     class Meta():
         model = UserInfo
-        fields = ('country_code', 'ph_num', 'pay_num')
+        fields = ('ph_num', 'position','isIITR','institute','pay_num')
+        widgets={
+            'isIITR':forms.RadioSelect
+        }
