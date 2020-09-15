@@ -100,3 +100,7 @@ def home(request):
     if request.user.is_authenticated:
         u=UserInfo.objects.get(user=User.objects.get(username=request.user.username))
     return render(request, 'base.html', {'u':u})
+
+
+def Payment(request):
+    return render(request, 'basic_app/payment.html')

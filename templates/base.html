@@ -46,7 +46,7 @@
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
           class="fa fa-bars w3-purple"></i></a>
-      <a href="https://www.iitr.ac.in/departments/MA/pages/index.html" class="w3-bar-item w3-button w3-padding-large">
+      <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
         Home</a>
       <a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Objectives</a>
@@ -78,6 +78,8 @@
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large"
+        style="text-decoration: none;">Home</a>
       <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
@@ -113,8 +115,8 @@
       <p> <strong>After Payment Successful Please send the payment
           receipt to <font color="red"> colloquium2020iitr@gmail.com</font> and enter transaction number in your account
           details </strong>
-          <a href="/update/#details" style="color: red;">Payment Details</a>
-        </p>
+        <a href="/update/#details" style="color: red;">Payment Details</a>
+      </p>
     </div>
     {% endif %}
     <div data-aos="fade-down" data-aos-duration="2500">
@@ -126,7 +128,15 @@
         <br />
         <span style="font-weight: bolder; color: #0078e1">19 Oct 2020 - 25 Oct 2020</span>
         <br>
-        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:register' %}" style="text-decoration:none;">Register Now</a></button>
+        {% if not user.is_authenticated %}
+        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:register' %}"
+          style="text-decoration:none;">Register Now</a></button>
+        {% else %}
+        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:payment' %}"
+          style="text-decoration:none;">Instruction For Payment</a></button>
+        {% endif %}
+            <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% static 'Brochure.pdf' %}"
+                style="text-decoration:none;" download>Download Brochure</a></button>
       </h1>
     </div>
   </header>
@@ -684,7 +694,7 @@
       </span>
     </div>
     <div id="spk1" class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Adrian Bejan.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Adrian Benjan</h3>
@@ -693,7 +703,7 @@
       </div>
     </div>
     <div id="spk2" class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Suman Chakraborty.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Suman Chakraborty</h3>
@@ -702,8 +712,8 @@
       </div>
     </div>
 
-    <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Detlef Lohse.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Detlef Lohse</h3>
@@ -711,8 +721,8 @@
         </div>
       </div>
     </div>
-    <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Antonio F. Miguel</h3>
@@ -720,8 +730,8 @@
         </div>
       </div>
     </div>
-    <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">P. Nithiarasu</h3>
@@ -729,8 +739,8 @@
         </div>
       </div>
     </div>
-    <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Andrew Rees</h3>
@@ -738,8 +748,8 @@
         </div>
       </div>
     </div>
-    <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Avinoam Nir</h3>
@@ -747,8 +757,8 @@
         </div>
       </div>
     </div>
-    <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Bernard Weigand.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Bernhard Weigand</h3>
@@ -756,8 +766,8 @@
         </div>
       </div>
     </div>
-    <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Rama Govindrajan</h3>
@@ -765,8 +775,8 @@
         </div>
       </div>
     </div>
-    <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/S Sundar.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">S. Sundar</h3>
@@ -774,8 +784,8 @@
         </div>
       </div>
     </div>
-    <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Ian Giriffiths</h3>
@@ -783,8 +793,8 @@
         </div>
       </div>
     </div>
-    <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Chris MacMinn</h3>
@@ -792,8 +802,8 @@
         </div>
       </div>
     </div>
-    <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/Somnath Bhattacharya.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Somnath Bhattacharya</h3>
@@ -801,8 +811,8 @@
         </div>
       </div>
     </div>
-    <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Gautam Biswas</h3>
@@ -810,17 +820,17 @@
         </div>
       </div>
     </div>
-    <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user">
+    <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
+        <img class="w3-circle spks" src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Yonus Cengel</h3>
           <h5>Faculty of Engineering, University of Nevada</h5>
         </div>
       </div>
     </div>
-    <div id="spk16" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
+    <div id="spk16" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
         <img class="w3-circle spks" src="{% static 'images/spk/S V Raghuram Rao.jpeg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Raghuram Rao</h3>
@@ -828,16 +838,16 @@
         </div>
       </div>
     </div>
-    <div id="spk17" class="w3-quarter w3-margin-top" style="display: none;">
-      <div class="w3-card-4 w3-white" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user">
+    <div id="spk17" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
+      <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
+        <img class="w3-circle spks" src="{% static 'images/spk/James J.Feng.jpg' %}" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">James J Feng</h3>
           <h5>Department of Mathematics, Chemical & Biological Engineering, University of British Columbia</h5>
         </div>
       </div>
     </div>
-    <div class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="100">
+    <div class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="150">
       <span class="next">
         <button id='nxt1' class="fill w3-white w3-hover-light-grey" style="width: 50px;border: none;" onclick="next1()">
           <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
@@ -860,10 +870,7 @@
             <li>
               <font color="white"><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
             </li>
-
-            {% if user.is_authenticated and u.isIITR == "NO" and not u.pay_num  %}
-            <li><a href="/update/#details" style="color: white;">Payment Details</a></li>
-            {% endif %}
+            <li><a href="{% url 'users:payment' %}">Instruction For Payment</a></li>
           </ul>
         </div>
         <div class="w3-half">
@@ -913,28 +920,7 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="id02" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('id02').style.display='none'"
-          class="w3-button w3-display-topright">&times;</span>
-        <p class="p1">
-          <font color="black">
-            <h3 style="font-weight: bold;">Department of Mathematics:</h3>The Department of Mathematics attained its
-            present status of an independent department
-            in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
-            Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
-            students of different Engineering and Science Departments.The Department also offers facilities for research
-            work leading to Ph.D. degree in different branches of Pure
-            and Applied Mathematics. Department had collaborated with different National and International
-            organizations and has expertise in various diversified fields of Mathematics. Our Department also offers
-            consultancies in Mathematical modeling and solution of various industrial and real-life problems.
-          </font>
-        </p>
-      </div>
-    </div>
-  </div> -->
+  </div>-->
   <script>
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {
