@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <title>IIT Roorkee</title><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous"
+/>
+
+<link
+rel="stylesheet"
+href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+crossorigin="anonymous"
+/>
+  <script src="{% static 'master.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'master.css' %}" />
+
+  <style>
+    body{
+
+        background-repeat: no-repeat;
+        background-size: cover;
+	}
+	.headon{
+	   background-image: url('/static/images/backimage.jpg');
+	   height:50%;}
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif;
+    }
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px;
+    }
+  </style>
+
+  <header>
+
+  <div class="w3-top">
+		<div class="w3-bar w3-purple w3-card w3-left-align w3-large">
+		  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
+			href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+			  class="fa fa-bars w3-purple"></i></a>
+		  <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large">
+			Home</a>
+		  <a  href="#Objectives"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;">Objectives</a>
+		  <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Speakers</a>
+		  <a href="{% static 'Schedule.pdf' %}" download
+			class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Schedule</a>
+
+		  <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+			style="text-decoration: none;">Focused Area</a>
+
+		  </div>
+
+		<!-- Navbar on small screens -->
+		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+		  <a href="#Objectives" class="w3-bar-item w3-button w3-padding-large"
+        style="text-decoration: none;">Objectives</a>
+		  <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
+		  <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
+			style="text-decoration: none;" download>Schedule</a>
+		  <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
+			Area</a>
+
+		</div>
+	  </div>
+ </header>
+  <div class="w3-row-padding w3-padding-32 w3-container">
+<div class="main_bt"> <!-- start main_btm -->
+	<div class="container">
+<div class="about">
+				<h2 style="color:#09269c;" align="center">Instruction for payment</h2>
+			</div>
+<h4 style="color:#3b3b3b; font-size:20px;" align="left"> Payment can be made through Online mode or Offline mode. Details are given below :  </h4><br>
+
+
+	<h4><b>Online mode:</b></h4>
+
+
+
+	<div class="about row">
+
+	<!--	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 1</u> -  Go to IIT Roorkee website <a href="https://www.iitr.ac.in/">www.iitr.ac.in</a> </h4>
+
+		<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 2</u> - Click on Conference Registration Fees mentioned at the bottom of the website. </h4>
+
+<div class="">
+		<img src="images/main/1.png" alt="" width="1000" height="300" class="img-responsive"></div>-->
+	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 1</u> - Click on the link <a href=
+	"https://www.onlinesbi.com/sbicollect/icollecthome.htm" >https://www.onlinesbi.com/sbicollect/icollecthome.htm</a>  </h4>
+<div class="">
+<img src="{% static 'images/step1.png' %}" alt=""  class="img-responsive"></div>
+
+
+	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 2</u> State of Corporate / Institution- Uttarakhand,
+Type of Corporate / Institution-Educational Institutions  </h4>
+<img src="{% static 'images/step2.png' %}" alt="" width="1000" height="300" class="img-responsive"></div>
+
+
+	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 3</u> Educational Institutions Name- DEAN SRIC CONF  </h4>
+		<img src="{% static 'images/step3.png' %}" alt="" width="1000" height="300" class="img-responsive">
+
+
+	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 4</u> Select Payment Category- IIT Roorkee Conference</h4>
+	<img src="{% static 'images/step4.png' %}" alt="" width="1000" height="300" class="img-responsive">
+	<h4 style="color:#3b3b3b; font-size:20px;" align="left"> <u>Step 5</u> For Conference Code: Refer to online registration form</h4>
+	<img src="{% static 'images/step5.png' %}" alt="" width="1000" height="600" class="img-responsive">
+
+
+				<h4 style="color:#e30657; font-size:20px;" align="center"> "OR" </h4>
+					<h4><b>Offline:</b>  Demand Draft drawn in favour of <b>"Dean SRIC IIT Roorkee" payable at Roorkee.</b></h4><br><br>
+<h4><b>NOTE</b> - Please keep the payment details ready with you before filling the registration form.</h4></div>
+<!--<h4>For more details, please visit <a href="http://eict.iitr.ac.in/upcoming.html">Upcoming Courses</a></h4>-->
+		</div>
+
+	</div>
+	<!-- --start-img-cursual---->
+</div>
+</div>
+
+<div class="container" align="center" >
+	<div class="col-md-12" align="center">
+
+
+	</div>
+</div>
+
+
+<!--################################## Style for blinking start ##############################################-->
+
+ <style>
+ blink {
+animation: 2s linear infinite condemed_blink_effect;
+}
+@keyframes condemed_blink_effect {
+
+    0% {
+
+        color:#C40009;
+    }
+    50% {
+        color:#098E7A;
+    }
+    100% {
+        color:#C208BD;
+    }
+}
+ </style>
+<!--################################## Style for blinking end ##############################################-->
+
+
+<br><br><!--################################## Upcoming Courses Slider end ##############################################-->
+
+
+
+<!-- <marquee behavior="alternate" style=" background:#3b3b3b;" ><h5 style="color:#ffffff; font-size:15px;" align="left">EICT Academy</h5></marquee>
+ ################################## Row Inportant link and news ##############################################-->
+   <!--################################## Row Inportant link and news  end  ##############################################-->
+
+<!--################################## Number animation  ##############################################-->
+
+ </br>
+<!--################################## Number animation  ##############################################-->
+
+<!--################################## Faculty Development Programme  ##############################################-->
+
+    <!--################################## Faculty Development Programme end ##############################################-->
+
+<!--################################## Candidate Testimonial start ##############################################-->
+
+<!-- end main -->
+
+<!--################################## Candidate Testimonial end ##############################################-->
+<!--################################## Slider  ##############################################-->
+
+
+	<!--################################## Slider end  ##############################################-->
+
+
+
+		<hr>
+
+</div>
+<!-- footer -->
+
+<div class="col-md-20 copy text-center">
+
+		<p>
+      Powered by
+      <a href="https://iitr.ac.in"> IIT Roorkee</a>
+    </p>
+		</div>
+
+</body>
+</html>

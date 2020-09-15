@@ -57,11 +57,12 @@
 			<a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
 				href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
 					class="fa fa-bars w3-purple"></i></a>
-			<a href="https://www.iitr.ac.in/departments/MA/pages/index.html"
+			<a href="{% url 'users:home' %}"
 				class="w3-bar-item w3-button w3-padding-large">
 				Home</a>
-			<a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-				style="text-decoration: none;">Objectives</a>
+			<a href="#Objectives"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;">Objectives</a>
 			<a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
 				style="text-decoration: none;">Speakers</a>
 			<a href="{% static 'Schedule.pdf' %}" download
@@ -90,8 +91,9 @@
 
 		<!-- Navbar on small screens -->
 		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-			<a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
-				style="text-decoration: none;">Objectives</a>
+			<a href="#Objectives" class="w3-bar-item w3-button w3-padding-large"
+        style="text-decoration: none;"
+        style="text-decoration: none;">Objectives</a>
 			<a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large"
 				style="text-decoration:none">Speakers</a>
 			<a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
@@ -116,7 +118,7 @@
 		<h3>After Payment</h3>
 		<p> <strong>If you are not the student of IIT ROORKEE then After Payment Successful Please send the payment
 				receipt to <font color="red"> colloquium2020iitr@gmail.com .</font></strong>
-			<a href="#details">Payment Details</a>
+			<a href="{% url 'users:payment' %}">Payment Details</a>
 		</p>
 	</div>
 

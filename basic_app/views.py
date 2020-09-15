@@ -13,7 +13,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm, UserInfoForm
 from .models import UserInfo
 
-
+def paymentpage(request):
+    return render(request, 'basic_app/paymentdetails.html')
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('users:home')

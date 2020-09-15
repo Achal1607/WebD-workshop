@@ -46,9 +46,10 @@
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
           class="fa fa-bars w3-purple"></i></a>
-      <a href="https://www.iitr.ac.in/departments/MA/pages/index.html" class="w3-bar-item w3-button w3-padding-large">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large"    style="text-decoration: none;">
         Home</a>
-      <a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      <a href="#Objectives"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Speakers</a>
@@ -78,7 +79,7 @@
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
+      <a   href="#Objectives"   class="w3-bar-item w3-button w3-padding-large"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
       <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
@@ -127,7 +128,8 @@
         <span style="font-weight: bolder; color: #0078e1">19 Oct 2020 - 25 Oct 2020</span>
         <br>
         <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:register' %}" style="text-decoration:none;">Register Now</a></button>
-      </h1>
+           <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:payment' %}" style="text-decoration:none;">Payment Details</a></button>
+              <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a  href="{% static 'Brochure.pdf' %}" download style="text-decoration:none;">Event Details</a></button></h1>
     </div>
   </header>
 
@@ -212,7 +214,7 @@
         </h5>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
-      <div id='Objectives'>
+ <div id='Objectives'>
         <div class="w3-light-gray w3-padding-32 w3-center" data-aos="fade-up" data-aos-duration="3000">
           <h1 style="font-weight: bolder;">Aim and objectives</h1>
           <h5>
