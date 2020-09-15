@@ -9,7 +9,7 @@ class UserInfo(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     ph_num=models.CharField(max_length=20,null=True,blank=True)
     position=models.CharField(max_length=256,choices=Given_Choices,default="UnderGraduate")
-    isIITR=models.CharField(max_length=3,choices=Given_Choices1,default="YES")
+    isIITR=models.CharField(max_length=3,choices=Given_Choices1,default="YES",blank=True,null=True)
     institute=models.CharField(max_length=256,blank=True,null=True)
     pay_num=models.CharField(max_length=50,null=True,blank=True)
     

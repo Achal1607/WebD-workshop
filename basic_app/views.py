@@ -64,16 +64,14 @@ def updatePage(request):
         form = UserInfoForm()
         u = ''
         if UserInfo.objects.filter(user=User.objects.get(username=user_info.username)).first():
-            u = UserInfo.objects.get(
-                user=User.objects.get(username=user_info.username))
-
+            u = UserInfo.objects.get(user=User.objects.get(username=user_info.username))
         if request.method == 'POST':
             form = UserInfoForm(data=request.POST)
+            print(form)
             if form.is_valid():
                 isIITR=u.isIITR
                 if UserInfo.objects.filter(user=User.objects.get(username=user_info.username)).first():
-                    u = UserInfo.objects.get(
-                        user=User.objects.get(username=user_info.username))
+                    u = UserInfo.objects.get(user=User.objects.get(username=user_info.username))
                     u.delete()
                 userdetail = form.save(commit=False)
                 userdetail.isIITR=isIITR
@@ -81,6 +79,7 @@ def updatePage(request):
                 userdetail.save()
                 return redirect('users:home')
             else:
+                print("HERE")
                 messages.info(request, "Error Updating Your Information...")
                 return redirect('users:home')
         else:

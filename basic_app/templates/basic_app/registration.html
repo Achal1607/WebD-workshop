@@ -118,7 +118,7 @@
 		<h3>After Payment</h3>
 		<p> <strong>If you are not the student of IIT ROORKEE then After Payment Successful Please send the payment
 				receipt to <font color="red"> colloquium2020iitr@gmail.com .</font></strong>
-			<a href="#details">Payment Details</a>
+			<a href="{% url 'users:payment' %}">Instruction For Payment</a>
 		</p>
 	</div>
 
@@ -228,7 +228,8 @@
 			op.selected = true
 			op.style.color = 'gray'
 			x.add(op, x[0])
-			form_fields[8].inlineLabels
+			form_fields[7].inlineLabels
+			form_fields[8].remove()
 			form_fields[8].classList.add('w3-radio')
 			form_fields[9].classList.add('w3-radio')
 			for (var field in form_fields) {
