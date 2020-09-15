@@ -52,7 +52,7 @@
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Speakers</a>
-      <a href="{% static 'Schedule.pdf' %}" download
+      <a href="{% static 'Schedule.pdf' %}" target="blank"
         class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Schedule</a>
 
@@ -84,7 +84,8 @@
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
       <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
-        style="text-decoration: none;" download>Schedule</a>
+        target="blank"
+        style="text-decoration: none;">Schedule</a>
       <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
         Area</a>
       {% if user.is_authenticated %}
@@ -114,7 +115,7 @@
       data-aos-duration="2500">
       <p> <strong>After Payment Successful Please send the payment
           receipt to <font color="red"> colloquium2020iitr@gmail.com</font> and enter transaction number in your account
-          details </strong>
+          details <a href="{% url 'users:update' %}"></a>here</strong>
         <a href="/update/#details" style="color: red;">Payment Details</a>
       </p>
     </div>
@@ -180,7 +181,7 @@
           height: 20vh;
           text-decoration: none;
           width: 20vh;" src="{% static 'images/sukavanam.jpg' %}" alt="Logo" /></center>
-          <center> Prof. N. Sukawanam,HOD dept of Mathematics,IITR</center>
+          <center> Prof. N. Sukavanam,HOD dept of Mathematics,IITR</center>
         </h5>
       </div>
       <div data-aos="fade-up" data-aos-duration="3000">
@@ -894,14 +895,13 @@
     </p>
   </footer>
   <!-- modal-->
-  <!-- 
+<!--   
   <div class="w3-container">
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content">
         <div class="w3-container">
           <span onclick="document.getElementById('id01').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
-
           <p class="p1">
 
             <font color="black">
@@ -923,7 +923,7 @@
         </div>
       </div>
     </div>
-  </div>-->
+  </div> -->
   <script>
     // Used to toggle the menu on small screens when clicking on the menu button
     function myFunction() {

@@ -52,7 +52,7 @@
                 style="text-decoration: none;">Objectives</a>
             <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                 style="text-decoration: none;">Speakers</a>
-            <a href="{% static 'Schedule.pdf' %}" download
+            <a href="{% static 'Schedule.pdf' %}"  target="blank"
                 class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                 style="text-decoration: none;">Schedule</a>
 
@@ -85,7 +85,7 @@
             <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large"
                 style="text-decoration:none">Speakers</a>
             <a href="{% static 'Schedule.pdf' %}" class="w3-bar-item w3-button w3-padding-large"
-                style="text-decoration: none;" download>Schedule</a>
+                style="text-decoration: none;" target="blank">Schedule</a>
             <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
                 Area</a>
             {% if user.is_authenticated %}
@@ -175,10 +175,6 @@
         
         <div class="w3-row-padding w3-padding-32 w3-container w3-center">
             <div class="w3-content">
-                <h4 style="color:#e30657; font-size:20px;" align="center"> "OR" </h4>
-                <h4><b>Offline:</b> Demand Draft drawn in favour of <b>"Dean SRIC IIT Roorkee" payable at Roorkee.</b>
-                </h4>
-                <br><br>
                 <h4><b>NOTE</b> - Please send the payment receipt to the email id<font color="red">
                         colloquium2020iitr@gmail.com</font> after payment success.
                 </h4>
