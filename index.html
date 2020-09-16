@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <title>IIT Roorkee</title>
 <meta charset="UTF-8" />
@@ -10,8 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="{% static 'master.js' %}"></script>
-<link rel="stylesheet" href="{% static 'master.css' %}" />
+<script src="static/master.js"></script>
+<link rel="stylesheet" href="static/master.css" />
 
 <style>
   body,
@@ -46,40 +45,23 @@
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
           class="fa fa-bars w3-purple"></i></a>
-      <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
+      <a href="/#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
         Home</a>
       <a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Speakers</a>
-      <a href="#"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'"
+        style="text-decoration: none;">Schedule</a>
 
       <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Focused Area</a>
-      {% if user.is_authenticated %}
-
-      <a href="{% url 'users:logout' %}"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;">Logout</a>
-      <a href="{% url 'users:update' %}"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;">{{user.username}}</a>
-      {% else %}
-      <a href="{% url 'users:login' %}"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;">Login</a>
-      <a href="{% url 'users:register' %}"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right"
-        style="text-decoration: none;">Registration</a>
-      {% endif %}
     </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="{% url 'users:home' %}" class="w3-bar-item w3-button w3-padding-large"
-        style="text-decoration: none;">Home</a>
+      <a href="/#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Home</a>
       <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
         style="text-decoration: none;">Objectives</a>
       <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
@@ -87,118 +69,102 @@
         onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
       <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
         Area</a>
-      {% if user.is_authenticated %}
-      <a href="{% url 'users:logout' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
-        style="text-decoration: none;">Logout</a>
-      <a href="{% url 'users:update' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
-        style="text-decoration: none;">{{user.username}}</a>
-      {% else %}
-      <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
-        style="text-decoration: none;">Login</a>
-      <a href="{% url 'users:register' %}" class="w3-bar-item w3-button w3-padding-large w3-right"
-        style="text-decoration: none;">Register</a>
-      {% endif %}
-
     </div>
   </div>
 
   <!-- Header -->
   <header class="w3-container w3-center" style="
-        padding: 128px 16px;
-        background-image: url('/static/images/backimage.jpg');
+        padding: 100px 16px;
+        background-image: url('static/images/backimage.jpg');
         background-repeat: no-repeat;
         background-size: cover;
       ">
-    {% if user.is_authenticated and u.isIITR == "NO" and not u.pay_num  %}
-    <div class="w3-panel w3-yellow w3-margin-top" style="padding: 0px;margin-top: 0px;" data-aos="fade-down"
-      data-aos-duration="2500">
-      <p> <strong>After Payment Successful Please send the payment
-          receipt to <font color="red"> colloquium2020iitr@gmail.com</font> and enter transaction number in your account
-          details <a href="{% url 'users:update' %}"></a>here</strong>
-        <a href="/update/#details" style="color: red;">Payment Details</a>
-      </p>
-    </div>
-    {% endif %}
     <div data-aos="fade-down" data-aos-duration="2500">
-      <h1 class="w3-margin w3-left-align w3-padding-32" style="font-size: 4vh;color: white;">
-        International e-colloquium on
-        <br />
-        <span style="font-weight: bolder; font-size: 5vh">
-          RECENT ADVANCEMENTS IN FLUID FLOW AND HEAT TRANSFER</span>
-        <br />
-        <span style="font-weight: bolder; color: #0078e1">19 Oct 2020 - 25 Oct 2020</span>
-        <br>
-        {% if not user.is_authenticated %}
-        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:register' %}"
-            style="text-decoration:none;">Register Now</a></button>
-        {% else %}
-        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% url 'users:payment' %}"
-            style="text-decoration:none;">Instruction For Payment</a></button>
-        {% endif %}
-        <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="{% static 'Brochure.pdf' %}"
-            style="text-decoration:none;" download>Download Brochure</a></button>
-      </h1>
+      <img style="
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+        height: 20vh;
+        text-decoration: none;
+        width: 20vh;" src="static/images/iitricon.png" alt="Logo" class="w3-center w3-quarter" style="margin-top: 0px;" />
+      <div class="w3-threequarter w3-center">
+        <h1 class="w3-margin w3-left-align " style="font-size: 4vh;color: white;">
+          International e-colloquium on
+          <br />
+          <span style="font-weight: bolder; font-size: 5vh">
+            RECENT ADVANCEMENTS IN FLUID FLOW AND HEAT TRANSFER</span>
+          <br />
+          <span style="font-weight: bolder; color: #0078e1">19 Oct 2020 - 25 Oct 2020</span>
+          <br>
+          <span class="blinking">Registration will start Soon...</span>
+          <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="static/Brochure.pdf"
+              style="text-decoration:none;" download>Download Brochure</a></button>
+        </h1>
+      </div>
     </div>
   </header>
 
   <!-- First Grid -->
+
   <div class="w3-row-padding w3-padding-32 w3-container">
     <div class="w3-content">
-      <center><img style="
-          border-top-left-radius: 50% 50%;
-          border-top-right-radius: 50% 50%;
-          border-bottom-right-radius: 50% 50%;
-          border-bottom-left-radius: 50% 50%;
-          height: 25vh;
-          text-decoration: none;
-          width: 25vh;" src="{% static 'images/iitricon.png' %}" alt="Logo" data-aos="fade-down"
-          data-aos-duration="3000" /> </center>
-      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-      <div data-aos="fade-up" data-aos-duration="3000">
+      <div class="w3-third" data-aos="fade-up" data-aos-duration="3000">
         <h1 class="w3-center" style="font-weight: bolder;">Patron</h1>
         <h5 class="w3-padding-32">
           <center><img style="
-          border-top-left-radius: 50% 50%;
-          border-top-right-radius: 50% 50%;
-          border-bottom-right-radius: 50% 50%;
-          border-bottom-left-radius: 50% 50%;
-          height: 20vh;
-          text-decoration: none;
-          width: 20vh;" src="{% static 'images/director.jpg' %}" alt="Logo" /></center>
-          <center> Prof. A.K. Chaturvedi, Director IITR</center>
+      border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+      border-bottom-right-radius: 50% 50%;
+      border-bottom-left-radius: 50% 50%;
+      height: 20vh;
+      text-decoration: none;
+      width: 20vh;" src="static/images/director.jpg" alt="Logo" /></center>
+          <center> Prof. A.K. Chaturvedi</center>
+          <center>Director</center>
+          <center>IIT Roorkee</center>
         </h5>
       </div>
-      <div data-aos="fade-up" data-aos-duration="3000">
+      <div class="w3-third" data-aos="fade-up" data-aos-duration="3000">
         <h1 class="w3-center" style="font-weight: bolder;">General Chair</h1>
         <h5 class="w3-padding-32">
           <center>
             <img style="
-          border-top-left-radius: 50% 50%;
-          border-top-right-radius: 50% 50%;
-          border-bottom-right-radius: 50% 50%;
-          border-bottom-left-radius: 50% 50%;
-          height: 20vh;
-          text-decoration: none;
-          width: 20vh;" src="{% static 'images/sukavanam.jpg' %}" alt="Logo" /></center>
-          <center> Prof. N. Sukavanam,HOD dept of Mathematics,IITR</center>
+      border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+      border-bottom-right-radius: 50% 50%;
+      border-bottom-left-radius: 50% 50%;
+      height: 20vh;
+      text-decoration: none;
+      width: 20vh;" src="static/images/sukavanam.jpg" alt="Logo" /></center>
+          <center> Prof. N. Sukavanam</center>
+          <center>Head of Department of Mathematics</center>
+          <center>IIT Roorkee</center>
         </h5>
       </div>
-      <div data-aos="fade-up" data-aos-duration="3000">
+      <div class="w3-third" data-aos="fade-up" data-aos-duration="3000">
         <h1 class="w3-center" style="font-weight: bolder;">Convener</h1>
         <h5 class="w3-padding-32">
           <center>
             <img style="
-          border-top-left-radius: 50% 50%;
-          border-top-right-radius: 50% 50%;
-          border-bottom-right-radius: 50% 50%;
-          border-bottom-left-radius: 50% 50%;
-          height: 20vh;
-          text-decoration: none;
-          width: 20vh;" src="{% static 'images/nayak.jpg' %}" alt="Logo" /></center>
-          <center> Prof. A.K Nayak,dept of Mathematics,IITR</center>
+      border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+      border-bottom-right-radius: 50% 50%;
+      border-bottom-left-radius: 50% 50%;
+      height: 20vh;
+      text-decoration: none;
+      width: 20vh;" src="static/images/nayak.jpg" alt="Logo" /></center>
+          <center> Prof. A.K Nayak</center>
+          <center>Department of Mathematics</center>
+          <center>IIT Roorkee</center>
         </h5>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-padding-32 w3-container">
+    <div class="w3-content">
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray" data-aos="fade-up"
+        data-aos-duration="3000">
       <div class="w3-light-gray w3-padding-32" data-aos="fade-up" data-aos-duration="3000">
         <h1 class="w3-center" style="font-weight: bolder;">Venue</h1>
         <h5 class="">
@@ -270,19 +236,13 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/gautam Biswas.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> Gautam Biswas</span>
               <br>
-              <!-- <span style="font-size: 4vh;">Title</span> -->
-              <!-- <br> -->
-              <!-- <span style="font-size: 2.8vh;">Session 1</span> -->
-              <!-- <br> -->
-              <!-- <span style="font-size: 2.8vh;color:#0078e1;"> Gautam Biswas <span style="font-size: 2.8vh;">&#10230;</span></span> -->
-              <!-- <br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bolder;">10:00 AM-11:30 AM</span>
             </h5>
           </div>
@@ -292,7 +252,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Chris MacMinn.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -301,10 +261,6 @@
               <br>
               <span style="font-size: 3.5vh;">Catch and Release of Gas Bubbles in a Soft Grannular Medium</span>
               <br>
-              <!-- <span style="font-size: 2.8vh;">Session 2</span>
-      <br>
-      <span style="font-size: 2.8vh;color:#0078e1;"> Chris MacMinn <span style="font-size: 2.8vh;">&#10230;</span></span>
-      <br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
           </div>
@@ -314,19 +270,13 @@
         data-aos-delay="750">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Detlef Lohse.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Detlef Lohse.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> Detlef Lohse</span>
               <br>
-              <!-- <span style="font-size: 4vh;">Title</span> -->
-              <!-- <br> -->
-              <!-- <span style="font-size: 2.8vh;">Session 1</span> -->
-              <!-- <br> -->
-              <!-- <span style="font-size: 2.8vh;color:#0078e1;"> Gautam Biswas <span style="font-size: 2.8vh;">&#10230;</span></span> -->
-              <!-- <br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bolder;">7:00 PM -08:30 PM</span>
             </h5>
           </div>
@@ -338,7 +288,7 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Suman Chakraborty.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Suman Chakraborty.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -347,10 +297,6 @@
               <br>
               <span style="font-size: 3.5vh;">Multiphase Micro-Fluidics: A Phase Field Prospective</span>
               <br>
-              <!-- <span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Yonus Cengel <span style="font-size: 2.8vh;">&#10230;</span></span>
-				<br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
           </div>
@@ -361,7 +307,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Yonus Cengel.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -370,10 +316,6 @@
               <br>
               <span style="font-size: 3.5vh;">2nd Law of Thermodynamics and its Application: LNG Regasification
                 Terminals to Generate Power</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Yonus Cengel <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
@@ -386,18 +328,12 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/James J.Feng.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/James J.Feng.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> James J.Feng</span>
-              <!-- <br>
-        <span style="font-size: 3.5vh;">2nd Law of Thermodynamics and its Application: LNG Regasification Terminals to Generate Power</span> -->
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Yonus Cengel <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
@@ -408,7 +344,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/P Nithiarasu.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -417,10 +353,6 @@
               <br>
               <span style="font-size: 4vh;">Using AI for Inverse Decisions in Health Transfer </span>
               <br>
-              <!-- <span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> P Nithiarasu <span style="font-size: 2.8vh;">&#10230;</span></span>
-				<br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
           </div>
@@ -430,7 +362,7 @@
         data-aos-delay="900">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Andrew Rees.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -438,10 +370,6 @@
               <span style="font-size: 2.8vh;color:#0078e1;"> Andrew Rees </span>
               <br>
               <span style="font-size: 4vh;">Convection of Bingham Fluid in Porous Media (Numerical Aspects)</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 3</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Andrew Rees <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
             </h5>
@@ -455,18 +383,12 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/S Sundar.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/S Sundar.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> S Sundar </span>
-              <!-- <br>
-        <span style="font-size: 4vh;">How can Mathematics help to keep the World clean? </span> -->
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Ian Giriffiths <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
@@ -477,7 +399,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Ian Giriffiths.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -485,10 +407,6 @@
               <span style="font-size: 2.8vh;color:#0078e1;"> Ian Giriffiths </span>
               <br>
               <span style="font-size: 4vh;">How can Mathematics help to keep the World clean? </span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Ian Giriffiths <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
@@ -499,7 +417,7 @@
         data-aos-delay="900">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Bernard Weigand.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Bernard Weigand.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -508,10 +426,6 @@
               <br>
               <span style="font-size: 4vh;">Direct Numerical Simulation of Drop Dynamics </span>
               <br>
-              <!-- <span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Ian Giriffiths <span style="font-size: 2.8vh;">&#10230;</span></span>
-				<br> -->
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
             </h5>
           </div>
@@ -522,7 +436,7 @@
       <div class="w3-row-padding w3-padding-32 w3-container">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="Speaker Picture" class="individual"
+            <img src="static/images/spk/Rama Govindrajan.jpg" alt="Speaker Picture" class="individual"
               data-aos="fade-up" data-aos-duration="3000" data-aos-delay="300">
           </div>
 
@@ -531,10 +445,6 @@
               <span style="font-size: 2.8vh;color:#0078e1;"> Rama Govindrajan </span>
               <br>
               <span style="font-size: 4vh;">Mammatus Cloud Formation by Settling and Evaporation</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 1</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Rama Govindrajan <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
@@ -545,7 +455,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Adrian Bejan.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Adrian Bejan.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -553,10 +463,6 @@
               <span style="font-size: 2.8vh;color:#0078e1;"> Adrian Bejan </span>
               <br>
               <span style="font-size: 4vh;">Evolutionary Design with Freedom</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 3</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Adrian Bejan <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM</span>
             </h5>
@@ -570,18 +476,12 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/S V Raghuram Rao.jpeg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/S V Raghuram Rao.jpeg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> Raghuram Rao </span>
-              <!-- <br>
-        <span style="font-size: 4vh;">Constructal Generation of Configuration in Nature: Fractal Tree Flow Networks and Allometric Laws</span> -->
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Antonio F.Miguel <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
@@ -592,7 +492,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Antonio F. Miguel.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -601,10 +501,6 @@
               <br>
               <span style="font-size: 4vh;">Constructal Generation of Configuration in Nature: Fractal Tree Flow
                 Networks and Allometric Laws</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Antonio F.Miguel <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
@@ -619,18 +515,12 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Somnath Bhattacharya.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Somnath Bhattacharya.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
               <span style="font-size: 2.8vh;color:#0078e1;"> Somnath Bhattacharya </span>
-              <!-- <br>
-        <span style="font-size: 4vh;">On Toroidal Drops in Viscous Flow</span> -->
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Avinoam Nir <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM</span>
             </h5>
@@ -641,7 +531,7 @@
         data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/Avinoam Nir.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
@@ -649,10 +539,6 @@
               <span style="font-size: 2.8vh;color:#0078e1;"> Avinoam Nir </span>
               <br>
               <span style="font-size: 4vh;">On Toroidal Drops in Viscous Flow</span>
-              <!-- <br>
-				<span style="font-size: 2.8vh;">Session 2</span>
-				<br>
-				<span style="font-size: 2.8vh;color:#0078e1;"> Avinoam Nir <span style="font-size: 2.8vh;">&#10230;</span></span> -->
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:00 PM</span>
             </h5>
@@ -695,7 +581,7 @@
     </div>
     <div id="spk1" class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Adrian Bejan.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Adrian Bejan.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Adrian Benjan</h3>
           <h5>Department Of Mechanical Engineering,Duke University</h5>
@@ -704,7 +590,7 @@
     </div>
     <div id="spk2" class="w3-quarter w3-margin-top" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Suman Chakraborty.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Suman Chakraborty.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Suman Chakraborty</h3>
           <h5>Department Of Mechanical Engineering,IIT Kharagpur</h5>
@@ -715,7 +601,7 @@
     <div id="spk3" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Detlef Lohse.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Detlef Lohse.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Detlef Lohse</h3>
           <h5>Department of Physics of Fluids, University of Twente</h5>
@@ -725,7 +611,7 @@
     <div id="spk4" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Antonio F. Miguel.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Antonio F. Miguel.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Antonio F. Miguel</h3>
           <h5>School of Science and Technology, University of Evora</h5>
@@ -735,7 +621,7 @@
     <div id="spk5" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/P Nithiarasu.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/P Nithiarasu.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">P. Nithiarasu</h3>
           <h5>College of Engineering, Swansea University</h5>
@@ -745,7 +631,7 @@
     <div id="spk6" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Andrew Rees.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Andrew Rees.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Andrew Rees</h3>
           <h5>Department of Mechanical Engineering, University of Bath</h5>
@@ -755,7 +641,7 @@
     <div id="spk7" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Avinoam Nir.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Avinoam Nir.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Avinoam Nir</h3>
           <h5>Chemical Engineering Faculty, Israel Institute Technion</h5>
@@ -765,7 +651,7 @@
     <div id="spk8" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Bernard Weigand.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Bernard Weigand.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Bernhard Weigand</h3>
           <h5>Institute of Aerospace Thermodynamics, University of Sttutguard</h5>
@@ -775,7 +661,7 @@
     <div id="spk9" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Rama Govindrajan.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Rama Govindrajan.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Rama Govindrajan</h3>
           <h5>International Center for Theoretical Sciences (ICTS), Banglore</h5>
@@ -785,7 +671,7 @@
     <div id="spk10" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/S Sundar.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/S Sundar.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">S. Sundar</h3>
           <h5>Department of Mathematics,<br> IIT Madras</h5>
@@ -795,7 +681,7 @@
     <div id="spk11" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Ian Giriffiths.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Ian Giriffiths.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Ian Giriffiths</h3>
           <h5>Oxford Center for Industrial and Applied Mathematics, University of Oxford</h5>
@@ -805,7 +691,7 @@
     <div id="spk12" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Chris MacMinn.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Chris MacMinn.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Chris MacMinn</h3>
           <h5>Civil Engineering Research, University of Oxford</h5>
@@ -815,7 +701,7 @@
     <div id="spk13" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Somnath Bhattacharya.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Somnath Bhattacharya.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Somnath Bhattacharya</h3>
           <h5>Department of Mathematics, IIT Kharagpur</h5>
@@ -825,7 +711,7 @@
     <div id="spk14" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/gautam Biswas.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/gautam Biswas.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Gautam Biswas</h3>
           <h5>Department of Mechanical Engineering, IIT Kanpur</h5>
@@ -835,7 +721,7 @@
     <div id="spk15" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/Yonus Cengel.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/Yonus Cengel.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Yonus Cengel</h3>
           <h5>Faculty of Engineering, University of Nevada</h5>
@@ -845,7 +731,7 @@
     <div id="spk16" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/S V Raghuram Rao.jpeg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/S V Raghuram Rao.jpeg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">Raghuram Rao</h3>
           <h5>Department of Aerospace Engineering, IISc Bangalore</h5>
@@ -855,7 +741,7 @@
     <div id="spk17" class="w3-quarter w3-margin-top" style="display: none;" data-aos="zoom-in" data-aos-duration="3000"
       data-aos-delay="300">
       <div class="w3-card-4 w3-white box" style="opacity: 0.9;">
-        <img class="w3-circle spks" src="{% static 'images/spk/James J.Feng.jpg' %}" alt="user">
+        <img class="w3-circle spks" src="static/images/spk/James J.Feng.jpg" alt="user">
         <div class="w3-container w3-center">
           <h3 style="font-weight: bold;">James J Feng</h3>
           <h5>Department of Mathematics, Chemical & Biological Engineering, University of British Columbia</h5>
@@ -887,7 +773,6 @@
             <li>
               <font color="white"><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
             </li>
-            <li><a href="{% url 'users:payment' %}">Instruction For Payment</a></li>
           </ul>
         </div>
         <div class="w3-half">
@@ -915,7 +800,7 @@
         <span onclick="document.getElementById('id01').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <h3 style="font-weight: bold;color: #0078e1;" class="w3-center">Schedule</h3>
-        <a href="{% static 'Schedule.pdf' %}" download>Download</a>
+        <a href="static/Schedule.pdf" download>Download</a>
         <br>
         <table class="w3-table-all">
           <tr>
