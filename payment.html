@@ -13,80 +13,91 @@
 <link rel="stylesheet" href="./static/master.css" />
 
 <style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Lato", sans-serif;
-  }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
 
-  .w3-bar,
-  h1,
-  button {
-    font-family: "Montserrat", sans-serif;
-  }
+    .w3-bar,
+    h1,
+    button {
+        font-family: "Montserrat", sans-serif;
+    }
 
-  .fa-anchor,
-  .fa-coffee {
-    font-size: 200px;
-  }
+    .fa-anchor,
+    .fa-coffee {
+        font-size: 200px;
+    }
 </style>
 
 <body>
-  <script>
-    AOS.init();
-  </script>
-  <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-bar w3-purple w3-card w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
-        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-          class="fa fa-bars w3-purple"></i></a>
-      <a href="./#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
-        Home</a>
-      <a href="./#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;">Objectives</a>
-      <a href="./#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;">Speakers</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'"
-        style="text-decoration: none;">Schedule</a>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-purple w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars w3-purple"></i></a>
+            <a href="./index.html" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
+                Home</a>
+            <a href="./#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                style="text-decoration: none;">Objectives</a>
+            <a href="./#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                style="text-decoration: none;">Speakers</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'"
+                style="text-decoration: none;">Schedule</a>
 
-      <a href="./#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;">Focus Areas</a>
-    </div>
+            <a href="./#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                style="text-decoration: none;">Focus Areas</a>
+        </div>
 
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="./#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Home</a>
-      <a href="./#Objectives" class="w3-bar-item w3-button w3-padding-large"
-        style="text-decoration: none;">Objectives</a>
-      <a href="./#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large"
-        onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
-      <a href="./#focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focus
-        Areas</a>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="./#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Home</a>
+            <a href="./#Objectives" class="w3-bar-item w3-button w3-padding-large"
+                style="text-decoration: none;">Objectives</a>
+            <a href="./#DivNotable" class="w3-bar-item w3-button w3-padding-large"
+                style="text-decoration:none">Speakers</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large"
+                onclick="document.getElementById('id01').style.display='block'"
+                style="text-decoration: none;">Schedule</a>
+            <a href="./#focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focus
+                Areas</a>
+        </div>
     </div>
-  </div>
 
     <div class="w3-light-gray">
-
         <!-- Step 1 -->
 
         <div class="w3-row-padding w3-padding-32 w3-container w3-center">
             <div class="w3-content">
                 <h2 style="color:#09269c;padding-top: 30px;">Instruction for payment</h2>
-                <h4 style="color:#3b3b3b; font-size:20px;"> Payment can be made through Online mode or
-                    Offline mode.
-                    <br>
-                    Details are given below : </h4><br>
-                <h4><b>Online mode:</b></h4>
+                <br>
+                <h4>Details are given below : </h4><br>
+                <h4><b>NEFT mode:</b></h4>
+                <h4>
+                    Registration fee may be remitted Online through
+                    NEFT to the Bank account given below. Proof of
+                    transaction of the registration fee (with
+                    transaction number if online transaction) shall
+                    be uploaded in the Google form:
+                </h4>
+                <img src="static/images/table.png" alt="Step1" class="w3-image">
+
+                <b>OR</b>
+                <h4><b>SBI collect mode:</b></h4>
                 <h4 style="color:#3b3b3b; font-size:20px;">
                     <u>Step 1</u> :
-                    <a href="https://www.onlinesbi.com/sbicollect/icollecthome.htm" style="color: blue;">
+                    <a href="https://www.onlinesbi.com/sbicollect/icollecthome.htm" target="_blank"
+                        style="color: blue;">
                         <span class="w3-margin-left"> Payment Link (SBI Collect)</span>
                     </a>
                 </h4>
@@ -145,7 +156,6 @@
                 <h4><b>NOTE</b> - Please make the payment before registration and upload payment receipt during
                     registration
                 </h4>
-                <a href="./static/Registration.pdf" download style="color: #0078e1;">Download Steps For Payment</a>
             </div>
         </div>
     </div>
