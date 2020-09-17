@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="static/master.js"></script>
-<link rel="stylesheet" href="static/master.css" />
+<script src="./static/master.js"></script>
+<link rel="stylesheet" href="./static/master.css" />
 
 <style>
   body,
@@ -45,30 +45,30 @@
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
           class="fa fa-bars w3-purple"></i></a>
-      <a href="/#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
+      <a href="./#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none;">
         Home</a>
-      <a href="/#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      <a href="./#Objectives" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Objectives</a>
-      <a href="/#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      <a href="./#DivNotable" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;">Speakers</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
         style="text-decoration: none;" onclick="document.getElementById('id01').style.display='block'"
         style="text-decoration: none;">Schedule</a>
 
-      <a href="/#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        style="text-decoration: none;">Focused Area</a>
+      <a href="./#focusarea" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        style="text-decoration: none;">Focus Areas</a>
     </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="/#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Home</a>
-      <a href="/#Objectives" class="w3-bar-item w3-button w3-padding-large"
+      <a href="./#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Home</a>
+      <a href="./#Objectives" class="w3-bar-item w3-button w3-padding-large"
         style="text-decoration: none;">Objectives</a>
-      <a href="/#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
+      <a href="./#DivNotable" class="w3-bar-item w3-button w3-padding-large" style="text-decoration:none">Speakers</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-large"
         onclick="document.getElementById('id01').style.display='block'" style="text-decoration: none;">Schedule</a>
-      <a href="/focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focused
-        Area</a>
+      <a href="./#focusarea" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">Focus
+        Areas</a>
     </div>
   </div>
 
@@ -87,7 +87,8 @@
         border-bottom-left-radius: 50% 50%;
         height: 20vh;
         text-decoration: none;
-        width: 20vh;" src="static/images/iitricon.png" alt="Logo" class="w3-center w3-quarter" style="margin-top: 0px;" />
+        width: 20vh;" src="static/images/iitricon.png" alt="Logo" class="w3-center w3-quarter"
+        style="margin-top: 0px;" />
       <div class="w3-threequarter w3-center">
         <h1 class="w3-margin w3-left-align " style="font-size: 4vh;color: white;">
           International e-colloquium on
@@ -97,9 +98,18 @@
           <br />
           <span style="font-weight: bolder; color: #0078e1">19 Oct 2020 - 25 Oct 2020</span>
           <br>
-          <span class="blinking">Registration will start Soon...</span>
-          <button class="w3-blue w3-hover-purple" style="width: fit-content;"><a href="static/Brochure.pdf"
-              style="text-decoration:none;" download>Download Brochure</a></button>
+          <a href="https://forms.gle/JcwRu6QbZcyExeCB8" style="text-decoration:none;" target="_blank">
+            <button class="w3-blue w3-hover-purple" style="width: fit-content;height:fit-content;padding:8px">Registration For
+              Non-IITR</button>
+          </a>
+          <a href="https://forms.gle/WwfwHQXNyJXtgxqg9" target="_blank" style="text-decoration:none;">
+            <button class="w3-blue w3-hover-purple" style="width: fit-content;height:fit-content;padding:8px">Registration For
+              IITR</button>
+          </a>
+          <a href="./static/Brochure.pdf" style="text-decoration:none;" download>
+            <button class="w3-blue w3-hover-purple" style="width: fit-content;height:fit-content;padding:8px">Download
+              Brochure</button>
+          </a>
         </h1>
       </div>
     </div>
@@ -203,7 +213,54 @@
     </div>
   </div>
 
+  <!-- Second Grid -->
+  <div id="aboutus">
+    <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000">
+      <div class="w3-content">
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <h1 class="w3-center" style="font-weight: bolder;">About Us</h1>
+        <div class="w3-third w3-center">
+          <img src="static/images/iitrimage1.jpg" class="w3-margin-top" style="max-width: 300px;max-height: 300px;" />
+        </div>
 
+        <div class="w3-twothird">
+          <h5 class="w3-margin-left w3-margin-top" style="margin-top: 0px;">
+            <strong> IIT Roorkee: </strong>
+            <br>
+            Institute of Technology Roorkee is among the foremost of institutes of national importance
+            in higher technological education and in engineering, basic and applied research. Since its establishment,
+            the Institute has played a vital role in providing the technical manpower and know-how to the country and
+            in
+            pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
+            contributed to all sectors of technological development.It has also been considered a trend-setter in the
+            area of education and research in the field of science, technology, and engineering. The Institute had
+            celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence....
+          </h5>
+          <button onclick="document.getElementById('id02').style.display='block'"
+            class="w3-button w3-black w3-hover-blue w3-margin-left">Read more</button>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000">
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <h5 class="w3-margin-left" style="margin-top: 0px;">
+            <strong>Department of Mathematics:</strong>
+            <br>
+            The Department of Mathematics attained its present status of an independent department
+            in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
+            Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
+            students of different Engineering and Science Departments...
+          </h5>
+          <button onclick="document.getElementById('id03').style.display='block'"
+            class="w3-button w3-black w3-hover-blue w3-margin-left">Read more</button>
+        </div>
+        <div class="w3-third w3-center">
+          <img src="static/images/maths.jpg" style="max-width: 300px;max-height: 300px;" />
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="lectures" class="w3-center">
     <div class="w3-row-padding w3-padding-32 w3-container w3-center">
       <div data-aos="fade-up" data-aos-duration="3000">
@@ -773,6 +830,10 @@
             <li>
               <font color="white"><em>Overseas Researcher / Academician / Student - US $ 50</em></font>
             </li>
+            <li>
+              <a href="./static/Registration.pdf"><button class="w3-blue w3-hover-red" style="width:fit-content;">Instruction for
+                  payment</button></a>
+            </li>
           </ul>
         </div>
         <div class="w3-half">
@@ -800,7 +861,7 @@
         <span onclick="document.getElementById('id01').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <h3 style="font-weight: bold;color: #0078e1;" class="w3-center">Schedule</h3>
-        <a href="static/Schedule.pdf" download>Download</a>
+        <a href="./static/Schedule.pdf" download>Download</a>
         <br>
         <table class="w3-table-all">
           <tr>
@@ -858,6 +919,47 @@
             <td></td>
           </tr>
         </table>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container">
+    <div id="id02" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+  
+        <p class="p1">
+  
+          <font color="black"><h3 style="font-weight: bold;">IIT Roorkee:</h3> Institute of Technology Roorkee is among the foremost of institutes of national importance
+            in higher technological education and in engineering, basic and applied research. Since its establishment,
+            the Institute has played a vital role in providing the technical manpower and know-how to the country and in
+            pursuit of research.The Institute ranks amongst the best technological institutions in the world and has
+            contributed to all sectors of technological development.It has also been considered a trend-setter in the
+            area of education and research in the field of science, technology, and engineering. The Institute had
+            celebrated its Sesquicentennial in October 1996 and now completed more than 170 years of its existence.
+              The Institute offers Bachelor's Degree courses in 10 disciplines of
+              Engineering and Architecture and Postgraduate's Degree in 55 disciplines of Engineering, Applied Science,
+              Architecture and planning. The Institute has facility for doctoral work in all Departments and Research
+              Centers.  </font>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <p class="p1">
+           <font color="black">  <h3 style="font-weight: bold;">Department of Mathematics:</h3>The Department of Mathematics attained its present status of an independent department
+             in 1960. Growing steadily, today the department runs its own Undergraduate and Postgraduate program in
+             Mathematics. Beside this, we also teach various topics in Mathematics to Undergraduate and Postgraduate
+             students of different Engineering and Science Departments.The Department also offers facilities for research work leading to Ph.D. degree in different branches of Pure
+               and Applied Mathematics. Department had collaborated with different National and International
+               organizations and has expertise in various diversified fields of Mathematics. Our Department also offers
+               consultancies in Mathematical modeling and solution of various industrial and real-life problems.
+           </font>
+       </p>
       </div>
     </div>
   </div>
