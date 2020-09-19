@@ -15,7 +15,47 @@
 
 <style>
 
+ 
+* {
+  box-sizing: border-box;
+}
+ 
 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;
+display:table;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #ffffff;
+}
 
   body,
   h1,
@@ -203,15 +243,28 @@
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
       </div>
       <div id='Objectives'>
-        <div class="w3-light-gray w3-padding-32 w3-center" data-aos="fade-up" data-aos-duration="3000">
-          <h1 style="font-weight: bolder;">Aim and objectives</h1>
-          <h5>
-            The aim of this e-colloquium to bring all the renowned scientists
-            and academicians in the field of fluid dynamics and heat transfer
-            together on a platform so that young researcher from various science
-            and engineering streams can take the benefit and get awareness about
-            the recent advancements in the fields.
-          </h5>
+        <div class="w3-light-gray w3-padding-32" data-aos="fade-up" data-aos-duration="3000">
+      <center>    <h1 style="font-weight: bolder;">Aim and objectives</h1></center>
+       
+            <br>
+<h5 style="padding:10px;">
+ 
+The main objective of the colloquium is to provide the platform where the participants can benefit from 
+the lectures delivered by eminent foreign and Indian experts on the trending topics in Fluid dynamics.The
+program also provides a platform for participants to exchange ideas of common interest.Moreover, the program
+offers an opportunity for young participants to get an overview of the current trends in fluid flow, heat transfer 
+and applications, and to interact with the experts in the field.This colloquium can provide foundations of theoretical 
+and computational approaches for intensive research in various advancement of fluid flow and heat transfer progress in 
+all aspects.
+The goal of the colloquium is to gather scholars from different departments of IIT Roorkee as well 
+as all over India to enhance their interest in the fields of transport phenomena and to foster 
+an environment conducive to exchanging ideas and information. This colloquium will also provide an ideal
+environment to develop new collaborations and meet experts on the fundamentals, applications, and products
+of the mentioned fields. This colloquium includes invited keynote talks by distinguished experts 
+from academia (across the globe) spread over seven days. It would serve as a platform for young researchers 
+in IIT Roorkee as well as in India to meet and discuss with academic experts and get motivated further to produce 
+high-quality research. The program is useful to mathematicians, scientists and engineers, keen to step into this fascinating area.
+   </h5>
         </div>
       </div>
     </div>
@@ -345,7 +398,7 @@
               <span style="font-size: 2.8vh;color:#8d6262;"> Max Planck Center Twente for CFD, Dept. Of Science and
                 Technology, University of Twente</span>
               <br>
-              <span style="font-size: 3.5vh;">Raleigh v/s Marangoni</span>
+              <span style="font-size: 3.5vh;">Rayleigh v/s Marangoni</span>
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bolder;">7:00 PM -08:30 PM IST</span>
             </h5>
@@ -396,7 +449,29 @@
           </div>
         </div>
       </div>
+
+<div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
+        data-aos-delay="600">
+        <div class="w3-content">
+          <div class="w3-third w3-center">
+            <img src="static/images/spk/Yonus Cengel.jpg" alt="Speaker Picture" class="individual">
+          </div>
+
+          <div class="w3-twothird">
+            <h5 class="w3-margin-left" style="margin-top: 0px;">
+              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. Steven Wereley</span>
+              <br>
+              <span style="font-size: 2.8vh;color:#8d6262;">Birck Nanotechnology Center, Mechenical Engineering, Purdue University</span>
+              <br>
+              <span style="font-size: 3.5vh;">Opto-Electro Kinetic Micro Flows and their Applications</span>
+              <br>
+              <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM IST</span>
+            </h5>
+          </div>
+        </div>
+      </div>
     </div>
+ 
     <div id="Oct21" style="display: none;">
       <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
         data-aos-delay="300">
@@ -463,20 +538,22 @@
     </div>
 
     <div id="Oct22" style="display: none;">
-      <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
-        data-aos-delay="300">
+        <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
+        data-aos-delay="600">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="static/images/spk/S Sundar.jpg" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/basu.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
-              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. S Sundar </span>
+              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. Saptarshi Basu </span>
               <br>
-              <span style="font-size: 2.8vh;color:#8d6262;">Head, Department of Mathematics,
-                IIT Madras
+              <span style="font-size: 2.8vh;color:#8d6262;"> 
+
               </span>
+              <br>
+              <span style="font-size: 3.7vh;">Department of Mechanical Engineering, IISc Bangalore </span>
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM IST</span>
             </h5>
@@ -597,6 +674,47 @@
           </div>
         </div>
       </div>
+<div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
+        data-aos-delay="300">
+        <div class="w3-content">
+          <div class="w3-third w3-center">
+            <img src="static/images/spk/S Sundar.jpg" alt="Speaker Picture" class="individual">
+          </div>
+
+          <div class="w3-twothird">
+            <h5 class="w3-margin-left" style="margin-top: 0px;">
+              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. S Sundar </span>
+              <br>
+              <span style="font-size: 2.8vh;color:#8d6262;">Head, Department of Mathematics,
+                IIT Madras
+              </span>
+              <br>
+ <span style="font-size: 3.7vh;">Particle in Fluid Methods </span><br>
+              <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">3:00 PM-4:30 PM IST</span>
+            </h5>
+          </div>
+        </div>
+      </div>
+<div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
+        data-aos-delay="300">
+        <div class="w3-content">
+          <div class="w3-third w3-center">
+            <img src="static/images/spk/S Sundar.jpg" alt="Speaker Picture" class="individual">
+          </div>
+
+          <div class="w3-twothird">
+            <h5 class="w3-margin-left" style="margin-top: 0px;">
+              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. S Balachandar </span>
+              <br>
+ <span style="font-size: 2.8vh;color:#8d6262;">Department of Mechanical  and Aerospace Engineering, University of Florida
+              </span>
+                
+              <br>
+              <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">7:00 PM-8:30 PM IST</span>
+            </h5>
+          </div>
+        </div>
+      </div>
       <!-- <div class="w3-row-padding w3-padding-32 w3-container" data-aos="fade-up" data-aos-duration="3000"
         data-aos-delay="600">
         <div class="w3-content">
@@ -629,17 +747,18 @@
         data-aos-delay="300">
         <div class="w3-content">
           <div class="w3-third w3-center">
-            <img src="static/images/spk/Somnath Bhattacharya.jpg" alt="Speaker Picture" class="individual">
+            <img src="static/images/spk/srevankar.jpg" alt="Speaker Picture" class="individual">
           </div>
 
           <div class="w3-twothird">
             <h5 class="w3-margin-left" style="margin-top: 0px;">
-              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. Somnath Bhattacharya </span>
+              <span style="font-size: 2.8vh;color:#0078e1;"> Prof. Shripad T. Revankar</span>
               <br>
-              <span style="font-size: 2.8vh;color:#8d6262;">Head, Department of
-                Mathematics,
+              <span style="font-size: 2.8vh;color:#8d6262;">School of Nuclear Engineering, Purdue University
                 IIT Kharagpur
               </span>
+              <br>
+   <span style="font-size: 3.7vh;">Heat Transfer in Passive Condenser System</span>
               <br>
               <span style="font-size: 2.8vh;color:#0078e1;font-weight: bold;">10:00 AM-11:30 AM IST</span>
             </h5>
@@ -679,12 +798,102 @@
         <div class="w3-light-gray w3-padding-32 w3-center">
           <h1 style="font-weight: bolder;">Focused Areas</h1>
 
+<br><br> 
+<div class="row"   >
+  <div class="column" >
+    <div class="card" style="min-height">
+      <h3 class="w3-center" style="font-weight: bolder; color:#0E75D3;">Bio Fluids</h3>
+ 
+        <h5 class="w3-padding-32">
+        Environmental and Geophysical Flows
+        </h5>
+  <h5 class="w3-padding-32">
+          Fluid Structure Interaction
+        </h5>
 
+ <h5 class="w3-padding-32">
+           Multi-phase Flows
+        </h5>
+
+  <h5 class="w3-padding-32">
+           Particle, Bubble, Drop Dynamics
+        </h5>
+    </div>
+  </div>
+
+  <div class="column"  >
+    <div class="card" style="min-height">
+    <h3 class="w3-center" style="font-weight: bolder;color:#0E75D3;">Bio Heat</h3>
+      <h5 class="w3-padding-32">
+           Condenser System
+        </h5>
+
+  <h5 class="w3-padding-32">
+         Electro-Thermal Micro-fluidics
+        </h5>
+
+  <h5 class="w3-padding-32">
+          Heat Transfer Enhancement
+        </h5>
+
+  <h5 class="w3-padding-32">
+          Thermodynamics
+        </h5>
+    </div>
+  </div>
+  
+  <div class="column"  >
+    <div class="card" style="min-height">
+       <h3 class="w3-center" style="font-weight: bolder;color:#0E75D3;">Control Structures</h3>
+     <h5 class="w3-padding-32">
+           Granular & Porous Media
+        </h5>
+
+ <h5 class="w3-padding-32">
+         Micro-Nano Scale Transport
+        </h5>
+
+ <h5 class="w3-padding-32">
+           Multi-scale and Multi-physics Flows
+        </h5>
+
+ <h5 class="w3-padding-32">
+            Nature Inspired Flows
+        </h5>
+  
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="min-height">
+        <h3 class="w3-center" style="font-weight: bolder;color:#0E75D3;">Deep Learning</h3>
+      <h5 class="w3-padding-32">
+          Direct Numerical Simulation
+        </h5>
+
+<h5 class="w3-padding-32">
+         Finite Volume Method
+        </h5>
+
+<h5 class="w3-padding-32">
+          Spectral Method
+        </h5>
+
+<h5 class="w3-padding-32">
+           Stability Theory
+        </h5>
+
+ 
+ 
+    </div>
+  </div>
+</div>
 
   <div class="w3-row-padding w3-padding-32 w3-container  ">
       <div class="w3-content">
       <div class="w3-quarter" data-aos="fade-up" data-aos-duration="3000">
-        <h3 class="w3-center" style="font-weight: bolder; color:#0E75D3;">Bio Fluids</h3>
+        <h3 class="w3-center" style="font-weight: bolder; color:#0E75D3;">Fluids</h3>
+   <h3 class="w3-center" style="font-weight: bolder; color:#0E75D3;">Fluids</h3>
  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
         <h5 class="w3-padding-32">
         Environmental and Geophysical Flows
@@ -765,7 +974,12 @@
 <h5 class="w3-padding-32">
            Stability Theory
         </h5>
-
+<h5 class="w3-padding-32">
+         Stability Theory
+        </h5>
+<h5 class="w3-padding-32">
+         
+        </h5>
       </div>
     </div>
   </div>
@@ -1042,7 +1256,7 @@
             <td>20th Oct</td>
             <td>Suman Chakraborty</td>
             <td>Yonus Cengel</td>
-            <td></td>
+            <td>Steven Wereley</td>
           </tr>
           <tr>
             <td>21st Oct</td>
@@ -1052,7 +1266,7 @@
           </tr>
           <tr>
             <td>22nd Oct</td>
-            <td>S Sundar</td>
+            <td>Saptarshi Basu</td>
             <td>Ian Griffiths</td>
             <td>Bernard Weigand</td>
           </tr>
@@ -1065,12 +1279,12 @@
           <tr>
             <td>24th Oct</td>
             <td>S. V. RaghuRam Rao</td>
-            <td>Antonio F. Miguel</td>
-            <td></td>
+            <td>S Sundar</td>
+            <td> S Balchandar</td>
           </tr>
           <tr>
             <td>25th Oct</td>
-            <td>Somnath Bhattacharya</td>
+            <td>Shripad T. Revankar</td>
             <td>Avinoam Nir</td>
             <td></td>
           </tr>
